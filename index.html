@@ -5,14 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNI - Welcome</title>
     <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 </head>
 <body>
     <div id="header-placeholder"></div>
 
-    <main>
-        <h1>Welcome to UNI</h1>
-        <p>A safe space for mothers.</p>
+    <main class="landing-main">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Your Health, Your Journey</h1>
+                <p class="subtitle">समग्र महिला स्वास्थ्य सहयोगी</p>
+                <p>Empowering women with comprehensive health information and support from puberty to menopause. Access trusted resources, connect with healthcare providers, and join a community of informed women - all in your language.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">Start Your Journey</a>
+                    <a href="#features" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <h2>Our Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <img src="assets/images/medical-overview.svg" alt="Knowledge Base">
+                    <h3>Knowledge Base</h3>
+                    <p>Searchable articles with categories, medical source citations, and related articles.</p>
+                    <a href="knowledge-base.html" class="btn btn-secondary">Explore</a>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/images/family-support.svg" alt="Community Forum">
+                    <h3>Community Forum</h3>
+                    <p>Browse anonymous discussions and read-only threads in a safe space.</p>
+                    <a href="forum.html" class="btn btn-secondary">Join Discussion</a>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/images/professional-help.svg" alt="Expert Directory">
+                    <h3>Expert Directory</h3>
+                    <p>View profiles of healthcare providers with their specialties and qualifications.</p>
+                    <a href="experts.html" class="btn btn-secondary">Find an Expert</a>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <div class="footer-bottom">
+            &copy; 2025 UNI | A safe space for mothers.
+        </div>
+    </footer>
 
     <script src="src/js/main.js"></script>
 </body>
