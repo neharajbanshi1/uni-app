@@ -5,15 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNI - Article</title>
     <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
 </head>
 <body>
     <div id="header-placeholder"></div>
 
-    <main>
-        <h1>Article Title</h1>
-        <!-- Content will be added later -->
+    <main class="container article-container">
+        <article id="article-content">
+            <!-- Dynamically Loaded Content -->
+            <h1 id="article-title"></h1>
+            <img id="article-image" src="" alt="Article image" class="article-hero-image">
+            <p class="article-meta">By <span id="article-author"></span> on <span id="article-date"></span></p>
+            <div id="article-body"></div>
+        </article>
+
+        <aside class="sidebar">
+            <section id="related-articles-section">
+                <h2>Related Articles</h2>
+                <ul id="related-articles-list">
+                    <!-- Dynamically Loaded Links -->
+                </ul>
+            </section>
+        </aside>
     </main>
 
+    <section class="container" id="citations-section">
+        <h2>Medical Sources</h2>
+        <ul id="citations-list">
+            <!-- Dynamically Loaded Citations -->
+        </ul>
+    </section>
+
     <script src="src/js/main.js"></script>
+    <script src="src/js/article.js"></script>
 </body>
 </html>

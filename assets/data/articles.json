@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "title": "Postpartum Depression Overview",
+    "category": "Medical Content",
+    "summary": "Learn about the symptoms, causes, and differences between postpartum depression and the 'baby blues'.",
+    "content": "Postpartum depression is a complex mix of physical, emotional, and behavioral changes that happen in some women after giving birth. It is a form of major depression that can begin during pregnancy or any time up to a year after birth. It is more severe and lasts longer than the 'baby blues,' a term used to describe the worry, sadness, and tiredness many women experience after having a baby. Symptoms of the baby blues usually last for only a few days to a week or two. With postpartum depression, feelings of sadness and anxiety can be extreme and might interfere with a woman's ability to care for herself or her family.",
+    "author": "UNI Health Team",
+    "publishDate": "2025-07-10",
+    "image": "/assets/images/medical-overview.svg",
+    "citations": [
+      "World Health Organization (WHO)",
+      "National Institute of Mental Health (NIMH)"
+    ],
+    "relatedArticleIds": [2, 5]
+  },
+  {
+    "id": 2,
+    "title": "Cultural Myths & Facts",
+    "category": "Medical Content",
+    "summary": "Debunking common myths about motherhood and mental health in the Nepali context.",
+    "content": "In many cultures, there's an expectation that new mothers should be overjoyed. But the reality is often more complicated. Myth: 'New mothers should always be happy.' Fact: It's normal to feel a wide range of emotions, including sadness and anxiety. Myth: 'Mental health issues are a sign of weakness.' Fact: Postpartum depression is a medical condition, not a character flaw. It requires support and treatment, just like any other illness.",
+    "author": "UNI Cultural Insights",
+    "publishDate": "2025-07-11",
+    "image": "/assets/images/cultural-myths.svg",
+    "citations": [
+      "Cross-Cultural Psychiatric Research Review"
+    ],
+    "relatedArticleIds": [1, 3]
+  },
+  {
+    "id": 3,
+    "title": "Sutkeri Practices Analysis",
+    "category": "Medical Content",
+    "summary": "Exploring the benefits and potential mental health risks of traditional postpartum confinement.",
+    "content": "The traditional practice of 'Sutkeri,' or postpartum confinement, offers many benefits, such as rest and bonding with the baby. However, strict confinement can sometimes lead to feelings of isolation and may exacerbate symptoms of postpartum depression. Modern adaptations focus on balancing the wisdom of tradition with the mental health needs of the new mother, encouraging family support and connection.",
+    "author": "UNI Health Team",
+    "publishDate": "2025-07-12",
+    "image": "/assets/images/sutkeri.svg",
+    "citations": [
+      "Journal of Cross-Cultural Psychology"
+    ],
+    "relatedArticleIds": [2, 5]
+  },
+  {
+    "id": 4,
+    "title": "Self-Care Strategies",
+    "category": "Practical Guides",
+    "summary": "Daily routines and practical tips for improving mental wellness during the postpartum period.",
+    "content": "Self-care is not selfish; it's essential for recovery. Simple strategies can make a big difference. Try to establish a daily routine that includes small breaks for yourself. Focus on nutritious food and gentle exercise, like walking. Prioritize sleep whenever possible—even short naps can help. Don't hesitate to ask for help from your partner or family to make time for these activities.",
+    "author": "UNI Wellness Coaches",
+    "publishDate": "2025-07-13",
+    "image": "/assets/images/self-care.svg",
+    "citations": [],
+    "relatedArticleIds": [5, 6]
+  },
+  {
+    "id": 5,
+    "title": "How Family Can Provide Support",
+    "category": "Practical Guides",
+    "summary": "A guide for husbands, parents, and relatives on how to effectively support a new mother.",
+    "content": "Family support is crucial. The best way to help is to listen without judgment. Offer practical help, like cooking, cleaning, or caring for the baby to allow the mother to rest. Educate yourselves about the signs of postpartum depression and encourage her to seek professional help if needed. Simple words of encouragement and validation can be incredibly powerful.",
+    "author": "UNI Family Support",
+    "publishDate": "2025-07-14",
+    "image": "/assets/images/family-support.svg",
+    "citations": [],
+    "relatedArticleIds": [1, 4, 6]
+  },
+  {
+    "id": 6,
+    "title": "Seeking Professional Help",
+    "category": "Practical Guides",
+    "summary": "Understanding the types of mental health support available and what to expect.",
+    "content": "Reaching out for professional help is a sign of strength. There are many types of support, from counselors and therapists to psychiatrists. Therapy can provide coping strategies, while medication may be recommended in some cases. The first step is often talking to a trusted healthcare provider who can guide you to the right resources.",
+    "author": "UNI Health Team",
+    "publishDate": "2025-07-15",
+    "image": "/assets/images/professional-help.svg",
+    "citations": [
+      "Nepal Medical Council"
+    ],
+    "relatedArticleIds": [1, 4]
+  }
+]

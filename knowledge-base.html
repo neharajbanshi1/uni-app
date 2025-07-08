@@ -5,15 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNI - Knowledge Base</title>
     <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
 </head>
 <body>
     <div id="header-placeholder"></div>
 
-    <main>
-        <h1>Knowledge Base</h1>
-        <!-- Content will be added later -->
+    <main class="container">
+        <header class="page-header">
+            <h1>Knowledge Base</h1>
+            <p>Find articles and resources to support your mental wellness journey.</p>
+        </header>
+
+        <section class="search-and-filter-section">
+            <div class="search-container">
+                <form id="search-form" role="search">
+                    <input type="search" id="search-input" placeholder="Search articles..." aria-label="Search articles">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            <div class="filter-container">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="Medical Content">Medical</button>
+                <button class="filter-btn" data-category="Practical Guides">Guides</button>
+            </div>
+        </section>
+
+        <section id="article-grid" class="article-grid-container">
+            <!-- Articles will be dynamically loaded here -->
+        </section>
     </main>
 
     <script src="src/js/main.js"></script>
+    <script src="src/js/knowledge-base.js"></script>
+    <script src="src/js/search.js"></script>
 </body>
 </html>

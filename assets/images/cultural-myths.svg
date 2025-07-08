@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="#28a745" stroke-width="2">
+  <rect width="100" height="100" fill="#eafaf1"/>
+  <path d="M30 70 l20 -40 l20 40" stroke-width="3"/>
+  <path d="M20 70 h60"/>
+  <path d="M50 20 l0 60" stroke-dasharray="5 5"/>
+  <path d="M25 80 q25 -20 50 0" stroke-width="1.5"/>
+  <path d="M25 85 q25 20 50 0" stroke-width="1.5"/>
+  <text x="50" y="60" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#333">Culture</text>
+</svg>
