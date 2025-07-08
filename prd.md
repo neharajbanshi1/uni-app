@@ -200,21 +200,23 @@ Research and create mock articles covering:
 
 ### File Structure
 ```
-/src
-  /html
-    - index.html (landing)
-    - knowledge-base.html
-    - article.html
-    - forum.html
-    - experts.html
-    - expert-profile.html
-  /css
-    - styles.css
-    - responsive.css
-  /js
-    - main.js
-    - search.js
-    - language-toggle.js
+/
+  - index.html (landing)
+  - knowledge-base.html
+  - article.html
+  - forum.html
+  - experts.html
+  - expert-profile.html
+  /components
+    - header.html
+  /src
+    /css
+      - styles.css
+      - responsive.css
+    /js
+      - main.js
+      - search.js
+      - language-toggle.js
   /assets
     - /images
     - /data (mock JSON files)
