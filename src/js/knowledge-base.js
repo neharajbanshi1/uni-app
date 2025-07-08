@@ -30,16 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         articles.forEach(article => {
-            const articleCard = document.createElement('div');
-            articleCard.className = 'post-preview'; // Use the same class as forum posts
+            const articleCard = document.createElement('a');
+            articleCard.href = `article.html?id=${article.id}`;
+            articleCard.className = 'article-card';
             articleCard.innerHTML = `
-                <div class="post-header">
-                    <span class="post-category">${article.category}</span>
-                    <h3 class="post-title">${article.title}</h3>
-                </div>
-                <div class="post-body">
+                <img src="${article.image}" alt="${article.title}" class="article-card-image">
+                <div class="article-card-content">
+                    <span class="category">${article.category}</span>
+                    <h3>${article.title}</h3>
                     <p>${article.summary}</p>
-                    <a href="article.html?id=${article.id}" class="profile-link">Read More</a>
                 </div>
             `;
             articleGrid.appendChild(articleCard);
