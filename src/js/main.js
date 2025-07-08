@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(() => {
             // Make the init function global
             window.googleTranslateElementInit = function() {
-                new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,ne'}, 'google_translate_element');
             };
             // Load the Google Translate script with the callback
             return loadScript('//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit');
