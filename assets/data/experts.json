@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Sunita Sharma",
+    "credentials": "MD, Psychiatrist",
+    "photo": "assets/images/expert1.jpg",
+    "specialties": ["Perinatal Mental Health", "Postpartum Depression"],
+    "experience": 12,
+    "languages": ["Nepali", "English"],
+    "fees": "NPR 1500 per session",
+    "location": "Kathmandu",
+    "contact": "sunita.sharma@hospital.com",
+    "bio": "Dr. Sharma is a leading psychiatrist specializing in supporting mothers through their postpartum journey. With over a decade of experience, she offers compassionate, evidence-based care to help women navigate the challenges of motherhood."
+  },
+  {
+    "id": 2,
+    "name": "Rajesh Thapa",
+    "credentials": "MA, Clinical Psychologist",
+    "photo": "assets/images/expert2.jpg",
+    "specialties": ["Cognitive Behavioral Therapy (CBT)", "Family Counseling"],
+    "experience": 8,
+    "languages": ["Nepali", "English"],
+    "fees": "NPR 1200 per session",
+    "location": "Patan",
+    "contact": "rajesh.thapa@clinic.com",
+    "bio": "Rajesh Thapa helps families navigate the challenges of postpartum mental health with compassion and evidence-based therapies. He is skilled in creating a safe and supportive environment for new mothers and their partners."
+  },
+  {
+    "id": 3,
+    "name": "Dr. Anjali Gurung",
+    "credentials": "MD, Psychiatrist",
+    "photo": "assets/images/expert3.jpg",
+    "specialties": ["Perinatal Mental Health", "Anxiety Disorders"],
+    "experience": 15,
+    "languages": ["Nepali", "English", "Newari"],
+    "fees": "NPR 1600 per session",
+    "location": "Kathmandu",
+    "contact": "anjali.gurung@hospital.com",
+    "bio": "Dr. Gurung has extensive experience in treating a wide range of mental health issues affecting new mothers, with a special focus on anxiety and mood disorders during the perinatal period."
+  },
+  {
+    "id": 4,
+    "name": "Bikash Shrestha",
+    "credentials": "MSW, Counselor",
+    "photo": "assets/images/expert4.jpg",
+    "specialties": ["Community Support", "Cultural Sensitivity Training"],
+    "experience": 7,
+    "languages": ["Nepali", "Maithili"],
+    "fees": "NPR 800 per session",
+    "location": "Bhaktapur",
+    "contact": "bikash.shrestha@communityhealth.org",
+    "bio": "Bikash Shrestha is a dedicated counselor working in community health. He is known for his culturally sensitive approach, helping mothers and families understand and address mental health in a way that respects tradition."
+  }
+]

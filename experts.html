@@ -10,10 +10,28 @@
     <div id="header-placeholder"></div>
 
     <main>
-        <h1>Expert Directory</h1>
-        <!-- Content will be added later -->
+        <div class="directory-header">
+            <h1>Expert Directory</h1>
+            <p>Find trusted healthcare professionals to support your mental well-being.</p>
+        </div>
+
+        <div class="filters">
+            <select id="specialty-filter">
+                <option value="all">All Specialties</option>
+                <!-- Options will be populated by JS -->
+            </select>
+            <select id="location-filter">
+                <option value="all">All Locations</option>
+                <!-- Options will be populated by JS -->
+            </select>
+        </div>
+
+        <div id="expert-grid" class="expert-grid">
+            <!-- Expert cards will be injected here by JavaScript -->
+        </div>
     </main>
 
     <script src="src/js/main.js"></script>
+    <script src="src/js/experts.js"></script>
 </body>
 </html>
