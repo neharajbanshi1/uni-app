@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "author": "Anonymous",
+    "category": "Anonymous Concerns",
+    "title": "Feeling overwhelmed after delivery",
+    "body": "I just had my baby a few weeks ago and I thought I would be overjoyed, but honestly I just feel overwhelmed and exhausted. Is this normal? I feel so guilty for not being happier.",
+    "thread": [
+      {
+        "author": "Anonymous",
+        "comment": "You're not alone. The first few weeks are the hardest. It gets better!"
+      },
+      {
+        "author": "Anonymous",
+        "comment": "This is so common. In our culture, there's so much pressure to be perfect, but it's okay to feel this way."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "author": "Anonymous",
+    "category": "Cultural Conflicts",
+    "title": "Sutkeri restrictions making me feel trapped",
+    "body": "My family is very strict about the sutkeri rules and I haven't been able to leave my room for weeks. I appreciate their care, but I'm starting to feel really isolated and depressed. How can I talk to them about this without being disrespectful?",
+    "thread": [
+      {
+        "author": "Anonymous",
+        "comment": "I went through the same thing. I tried explaining to my family that some fresh air was important for my mental health."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "author": "Anonymous",
+    "category": "Anonymous Concerns",
+    "title": "Mother-in-law says I'm being dramatic",
+    "body": "I tried to explain to my mother-in-law that I think I might have postpartum depression, and she told me I was just being dramatic and looking for attention. I feel so hurt and misunderstood.",
+    "thread": [
+      {
+        "author": "Anonymous",
+        "comment": "Your feelings are valid. It's hard when family doesn't understand."
+      }
+    ]
+  }
+]

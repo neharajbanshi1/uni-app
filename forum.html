@@ -1,19 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNI - Community Forum</title>
-    <link rel="stylesheet" href="src/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Forum - UNI</title>
+  <link rel="stylesheet" href="src/css/styles.css">
 </head>
 <body>
-    <div id="header-placeholder"></div>
 
-    <main>
-        <h1>Community Forum</h1>
-        <!-- Content will be added later -->
-    </main>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">UNI</a>
+      <ul>
+        <li><a href="knowledge-base.html">Knowledge Base</a></li>
+        <li><a href="forum.html">Community</a></li>
+        <li><a href="experts.html">Experts</a></li>
+      </ul>
+      <div id="google_translate_element"></div>
+    </nav>
+  </header>
 
-    <script src="src/js/main.js"></script>
+  <main>
+    <section class="forum-header">
+      <h1>Community Forum</h1>
+      <div class="safe-space-guidelines">
+        <h2>A Safe Space for Sharing</h2>
+        <p>This is a supportive, anonymous community. Please be kind and respectful in all interactions. What is shared here, stays here.</p>
+      </div>
+    </section>
+
+    <section class="new-post-section">
+      <h3>Share Your Story</h3>
+      <textarea id="new-post-text" placeholder="Share your thoughts anonymously..."></textarea>
+      <button id="submit-post-btn">Post</button>
+    </section>
+
+    <section class="forum-content">
+      <div class="forum-filters">
+        <button class="filter-btn active" data-category="all">All Posts</button>
+        <button class="filter-btn" data-category="Anonymous Concerns">Anonymous Concerns</button>
+        <button class="filter-btn" data-category="Cultural Conflicts">Cultural Conflicts</button>
+      </div>
+      <div id="posts-container" class="post-list">
+        <!-- Posts will be dynamically loaded here -->
+      </div>
+    </section>
+  </main>
+
+  <script src="src/js/forum.js"></script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="src/js/main.js"></script>
 </body>
 </html>
