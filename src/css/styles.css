@@ -1,13 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #ecf0f1;
-    --accent-color: #1abc9c;
-    --text-color: #34495e;
-    --white: #ffffff;
-    --light-gray: #f4f4f4;
-    --medium-gray: #ccc;
-    --dark-gray: #333;
+  /* Soft & Soothing Palette */
+  --color-blush-pink: #FADADD;
+  --color-warm-rose: #E5989B;
+  --color-ivory: #FFF8F0;
+  --color-muted-lilac: #CDB4DB;
+  --color-charcoal-gray: #4A4A4A;
+
+  /* Darker shades */
+  --darker-muted-lilac: #a98bbd;
+  --darker-warm-rose: #d18a8d;
+  
+  /* Semantic Usage */
+  --color-primary-bg: var(--color-ivory);
+  --color-primary-accent: var(--color-blush-pink);
+  --color-secondary-accent: var(--color-warm-rose);
+  --color-tertiary-accent: var(--color-muted-lilac);
+  --color-text-primary: var(--color-charcoal-gray);
+  --color-text-secondary: var(--color-warm-rose);
+
+  /* Legacy Mapping */
+  --primary-color: var(--color-primary-accent);
+  --secondary-color: var(--color-primary-bg);
+  --accent-color: var(--color-secondary-accent);
+  --text-color: var(--color-text-primary);
+  --white: #FFFFFF;
+  --medium-gray: #A9A9A9;
+  --dark-gray: var(--color-charcoal-gray);
+  --light-taupe: #E8DDD4; /* This was used for borders, can be replaced with a new palette color */
 }
+
 /* Basic Reset */
 * {
     margin: 0;
@@ -16,14 +39,14 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Nunito', sans-serif;
     line-height: 1.6;
-    background-color: var(--secondary-color);
+    background-color: var(--color-primary-bg);
     color: var(--text-color);
 }
 
 header {
-    background: var(--primary-color);
+    background: linear-gradient(45deg, var(--darker-muted-lilac), var(--darker-warm-rose));
     color: var(--white);
     padding: 1rem 0;
     border-bottom: 1px solid var(--dark-gray);
@@ -89,7 +112,7 @@ main {
   padding: 1.5rem;
   border: 1px solid var(--accent-color);
   border-radius: 8px;
-  background-color: #fdfdfd;
+  background-color: var(--white);
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
@@ -134,7 +157,7 @@ main {
 }
 
 .post-preview {
-  border: 1px solid #eee;
+  border: 1px solid var(--light-taupe);
   border-radius: 8px;
   padding: 1.5rem;
   background-color: var(--white);
@@ -189,7 +212,7 @@ main {
 }
 
 .post-thread {
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--light-taupe);
   padding-top: 1rem;
 }
 
@@ -211,7 +234,7 @@ main {
   margin: 2rem auto;
   padding: 1.5rem;
   background-color: var(--white);
-  border: 1px solid #eee;
+  border: 1px solid var(--light-taupe);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
@@ -253,7 +276,7 @@ main {
 }
 
 #submit-post-btn:hover {
-  background-color: #17a589;
+  background-color: var(--darker-warm-rose);
 }
 /* Expert Directory Styles */
 .directory-header {
@@ -284,7 +307,7 @@ main {
 
 .expert-card {
     background: var(--white);
-    border: 1px solid #ddd;
+    border: 1px solid var(--light-taupe);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -332,7 +355,7 @@ main {
 }
 
 .profile-link:hover {
-    background-color: #17a589;
+    background-color: var(--darker-warm-rose);
 }
 
 /* Expert Profile Page Styles */
@@ -383,7 +406,7 @@ main {
 .mock-booking-form {
     margin-top: 2rem;
     padding-top: 1.5rem;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--light-taupe);
 }
 
 .mock-booking-form h3 {
@@ -420,7 +443,7 @@ main {
 }
 
 .mock-booking-form button:hover {
-    background-color: #17a589;
+    background-color: var(--darker-warm-rose);
 }
 /* Expert Profile Body and Bio */
 .profile-body {
@@ -512,7 +535,7 @@ main {
 
 .article-card {
     background: var(--white);
-    border: 1px solid #ddd;
+    border: 1px solid var(--light-taupe);
     border-radius: 8px;
     overflow: hidden;
     text-decoration: none;
@@ -577,7 +600,7 @@ main {
 .sidebar {
     flex: 1; /* Takes up 1/4 of the space */
     padding-left: 1.5rem;
-    border-left: 1px solid #eee;
+    border-left: 1px solid var(--light-taupe);
 }
 
 #related-articles-list, #citations-list {
@@ -595,7 +618,7 @@ main {
 #citations-section {
     margin-top: 3rem;
     padding-top: 1.5rem;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--light-taupe);
 }
 /* Landing Page Styles */
 .landing-main {
@@ -651,15 +674,19 @@ main {
 }
 
 .btn-primary {
-    background: var(--accent-color);
-    color: var(--white);
+    background-color: #CDB4DB; /* Muted Lilac */
+    color: white;
     border: none;
 }
 
+.btn-primary:hover {
+    background-color: #E5989B; /* Warm Rose */
+}
+
 .btn-secondary {
-    background-color: var(--white);
-    color: var(--accent-color);
-    border: 2px solid var(--accent-color);
+    background-color: #FADADD; /* Blush Pink */
+    color: #4A4A4A; /* Charcoal Gray */
+    border: 2px solid #E5989B; /* Warm Rose */
 }
 
 
@@ -674,7 +701,7 @@ main {
 }
 
 footer {
-    background-color: var(--primary-color);
+    background-color: var(--darker-warm-rose);
     color: var(--white);
     text-align: center;
     padding: 2rem 0;
@@ -682,10 +709,6 @@ footer {
 }
 
 
-header {
-    padding: 1rem 2rem;
-    background: var(--primary-color);
-}
 
 header nav {
     display: flex;
@@ -713,10 +736,11 @@ header nav ul li a {
 }
 
 .feature-item {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    background-color: var(--color-ivory); /* Ivory */
+    border: 2px solid var(--color-blush-pink); /* Blush Pink */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(74, 74, 74, 0.1);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -741,7 +765,7 @@ header nav ul li a {
 .footer-bottom {
     text-align: center;
     padding: 1rem;
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--warm-taupe);
 }
 .nav-right {
     display: flex;
@@ -750,7 +774,7 @@ header nav ul li a {
 }
 /* Footer Styles */
 footer {
-    background-color: var(--primary-color);
+    background-color: var(--color-secondary-accent);
     color: var(--white);
     padding: 2rem 0;
     margin-top: 2rem;
@@ -779,7 +803,7 @@ footer {
 
 .footer-column p, .footer-column ul {
     font-size: 0.9rem;
-    color: var(--light-gray);
+    color: var(--light-taupe);
 }
 
 .footer-column ul {
@@ -792,7 +816,7 @@ footer {
 }
 
 .footer-column ul li a {
-    color: var(--light-gray);
+    color: var(--light-taupe);
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -810,7 +834,7 @@ footer {
 .footer-bottom {
     text-align: center;
     padding: 1rem;
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--warm-taupe);
     margin-top: 1rem;
 }
 
@@ -819,6 +843,6 @@ footer {
 }
 
 .footer-bottom a {
-    color: var(--light-gray);
+    color: var(--light-taupe);
     text-decoration: none;
 }

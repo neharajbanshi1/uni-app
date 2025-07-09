@@ -45,13 +45,14 @@ Build a frontend-only prototype of UNI, a bilingual web platform addressing post
 - **Priority**: Critical for demo
 
 #### 3. Community Forum
-- **Scope**: Browse-only mock discussions
+- **Scope**: Browse-only mock discussions with posting functionality.
 - **Features**:
-  - Anonymous post listings
-  - Discussion threads (read-only)
-  - Post categories
-  - Safe space indicators
-- **No posting functionality required**
+  - Anonymous post listings with user avatars.
+  - Discussion threads (read-only).
+  - Post categories.
+  - A welcoming header and enhanced "Safe Space" guidelines.
+  - **New**: Users can now share their own stories. Posts are added to the top of the forum in real-time.
+- **Note**: Posting is session-based; new posts are not saved permanently.
 - **Priority**: Critical for demo
 
 #### 4. Expert Directory
@@ -179,10 +180,11 @@ Research and create mock articles covering:
 - Social sharing buttons (mock)
 
 #### 4. Community Forum
-- Discussion categories
-- Anonymous post previews
-- Safe space guidelines
-- Community rules
+- Welcoming header with an introductory message.
+- Enhanced "Safe Space" guidelines to foster trust.
+- Discussion categories for filtering posts.
+- Anonymous post previews with user avatars to create a sense of presence.
+- A "Share Your Story" form that allows for real-time, anonymous posting.
 
 #### 5. Expert Directory
 - Provider grid with photos
