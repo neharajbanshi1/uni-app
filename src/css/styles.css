@@ -664,6 +664,9 @@ header nav ul li a {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .feature-item img {
@@ -674,6 +677,10 @@ header nav ul li a {
 .feature-item h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+    flex-grow: 1;
 }
 
 
