@@ -46,4 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => {
             console.error('Failed to load header or scripts:', error);
         });
+
+    // Load the footer
+    loadComponent('components/footer.html', 'footer-placeholder');
 });
