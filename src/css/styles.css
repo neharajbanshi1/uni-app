@@ -748,8 +748,11 @@ header nav ul li a {
     align-items: center;
 }
 
-.feature-item img {
-    max-width: 80px;
+.features-section .feature-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%; /* Make images circular */
     margin-bottom: 1rem;
 }
 
