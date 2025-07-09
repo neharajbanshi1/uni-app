@@ -62,10 +62,13 @@ nav {
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: var(--white);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
 }
 
 nav ul {
@@ -720,8 +723,6 @@ header nav {
 }
 
 header .logo {
-    font-size: 2rem;
-    color: var(--white);
 }
 
 header nav ul li a {
