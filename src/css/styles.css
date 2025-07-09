@@ -74,13 +74,30 @@ main {
   background-color: var(--secondary-color);
 }
 
+.forum-intro {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .safe-space-guidelines {
   max-width: 600px;
   margin: 1rem auto;
-  padding: 1rem;
+  padding: 1.5rem;
   border: 1px solid var(--accent-color);
   border-radius: 8px;
-  background-color: var(--white);
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.safe-space-guidelines h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .forum-content {
@@ -125,7 +142,27 @@ main {
 }
 
 .post-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.post-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.post-header-info {
+  flex-grow: 1;
 }
 
 .post-category {
@@ -139,7 +176,7 @@ main {
 }
 
 .post-title {
-  margin: 0.5rem 0;
+  margin: 0;
 }
 
 .post-author {
@@ -193,6 +230,13 @@ main {
   resize: vertical;
   margin-bottom: 1rem;
   font-family: inherit;
+}
+
+.anonymous-note {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 #submit-post-btn {

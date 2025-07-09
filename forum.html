@@ -12,17 +12,21 @@
 
   <main>
     <section class="forum-header">
-      <h1>Community Forum</h1>
+      <h1>Welcome to Our Community</h1>
+      <p class="forum-intro">A place to connect, share, and find support. You are not alone.</p>
       <div class="safe-space-guidelines">
         <h2>A Safe Space for Sharing</h2>
-        <p>This is a supportive, anonymous community. Please be kind and respectful in all interactions. What is shared here, stays here.</p>
+        <p>This is a supportive, anonymous community where you can freely express yourself. We are all here to listen and support one another. Please be kind and respectful. What is shared here, stays here.</p>
       </div>
     </section>
 
     <section class="new-post-section">
       <h3>Share Your Story</h3>
-      <textarea id="new-post-text" placeholder="Share your thoughts anonymously..."></textarea>
-      <button id="submit-post-btn">Post</button>
+      <form id="new-post-form">
+        <textarea id="new-post-text" placeholder="Share your thoughts anonymously..." required></textarea>
+        <p class="anonymous-note">Your post will be anonymous.</p>
+        <button id="submit-post-btn" type="submit">Post</button>
+      </form>
     </section>
 
     <section class="forum-content">

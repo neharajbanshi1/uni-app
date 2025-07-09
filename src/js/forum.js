@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const postList = document.getElementById('posts-container');
   const filterBtns = document.querySelectorAll('.filter-btn');
+  const newPostForm = document.getElementById('new-post-form');
+  const newPostText = document.getElementById('new-post-text');
 
   let posts = [];
 
@@ -18,9 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
       postElement.classList.add('post-preview');
       postElement.innerHTML = `
         <div class="post-header">
-          <span class="post-category">${post.category}</span>
-          <h3 class="post-title">${post.title}</h3>
-          <p class="post-author">by ${post.author}</p>
+          <div class="post-avatar">A</div>
+          <div class="post-header-info">
+            <span class="post-category">${post.category}</span>
+            <h3 class="post-title">${post.title}</h3>
+            <p class="post-author">by ${post.author}</p>
+          </div>
         </div>
         <div class="post-body">
           <p>${post.body}</p>
@@ -50,5 +55,30 @@ document.addEventListener('DOMContentLoaded', () => {
         renderPosts(filteredPosts);
       }
     });
+  });
+
+  newPostForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const postBody = newPostText.value.trim();
+
+    if (postBody) {
+      const newPost = {
+        id: posts.length + 1,
+        author: 'Anonymous',
+        category: 'Anonymous Concerns',
+        title: 'A New Story',
+        body: postBody,
+        thread: []
+      };
+
+      // Add the new post to the beginning of the array
+      posts.unshift(newPost);
+      
+      // Re-render all posts
+      renderPosts(posts);
+      
+      // Reset the form
+      newPostText.value = '';
+    }
   });
 });
