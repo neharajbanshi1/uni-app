@@ -1038,3 +1038,70 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
+/* Myth-Fact Card Styles */
+.myth-fact-card {
+    background-color: var(--white);
+    border: 1px solid var(--light-taupe);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.myth-section, .fact-section {
+    padding: 1.5rem;
+}
+
+.myth-section {
+    background-color: var(--color-blush-pink);
+    border-radius: 8px 8px 0 0;
+}
+
+.myth-section h3 {
+    color: var(--color-warm-rose);
+    margin-bottom: 0.5rem;
+}
+
+.fact-section h3 {
+    color: var(--darker-muted-lilac);
+    margin-bottom: 0.5rem;
+}
+
+.source {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--medium-gray);
+}
+
+.source-text {
+    font-style: italic;
+}
+
+/* Support Tip Card Styles */
+.support-tip-card {
+    background: linear-gradient(135deg, var(--color-muted-lilac), var(--darker-muted-lilac));
+    color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.tip-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.tip-description {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+.source-link {
+    color: var(--darker-muted-lilac);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.source-link:hover {
+    text-decoration: underline;
+}

@@ -36,18 +36,48 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Render the article content
-    const renderArticle = (article, allArticles) => {
+    const renderArticle = async (article, allArticles) => {
         document.title = `UNI - ${article.title}`; // Update page title
         articleTitle.textContent = article.title;
         articleImage.src = article.image;
         articleImage.alt = article.title;
         articleAuthor.textContent = article.author;
         articleDate.textContent = new Date(article.publishDate).toLocaleDateString();
-        articleBody.innerHTML = article.content;
+        
+        // Clear existing body content
+        articleBody.innerHTML = '';
+
+        if (article.contentType === 'myth-fact' && Array.isArray(article.content)) {
+            const response = await fetch('components/myth-fact-card.html');
+            const cardTemplate = await response.text();
+            article.content.forEach(item => {
+                const card = document.createElement('div');
+                card.innerHTML = cardTemplate;
+                card.querySelector('.myth-text').textContent = item.myth;
+                card.querySelector('.fact-text').textContent = item.fact;
+                const sourceLink = card.querySelector('.source-link');
+                sourceLink.href = item.source.url;
+                sourceLink.textContent = item.source.text;
+                articleBody.appendChild(card);
+            });
+        } else if (article.contentType === 'support-tips' && Array.isArray(article.content)) {
+            const response = await fetch('components/support-tip-card.html');
+            const cardTemplate = await response.text();
+            article.content.forEach(item => {
+                const card = document.createElement('div');
+                card.innerHTML = cardTemplate;
+                card.querySelector('.tip-title').textContent = item.tip;
+                card.querySelector('.tip-description').textContent = item.description;
+                articleBody.appendChild(card);
+            });
+        } else {
+            articleBody.innerHTML = article.content;
+        }
 
         // Render citations
         if (article.citations && article.citations.length > 0) {
             citationsList.innerHTML = article.citations.map(citation => `<li>${citation}</li>`).join('');
+            document.getElementById('citations-section').style.display = 'block';
         } else {
             document.getElementById('citations-section').style.display = 'none';
         }

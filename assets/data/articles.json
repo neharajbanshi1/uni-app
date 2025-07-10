@@ -21,15 +21,60 @@
     "title": "Cultural Myths & Facts",
     "category": "Medical Content",
     "summary": "Debunking common myths about motherhood and mental health in the Nepali context.",
-    "content": "In many cultures, there's an expectation that new mothers should be overjoyed. But the reality is often more complicated. Myth: 'New mothers should always be happy.' Fact: It's normal to feel a wide range of emotions, including sadness and anxiety. Myth: 'Mental health issues are a sign of weakness.' Fact: Postpartum depression is a medical condition, not a character flaw. It requires support and treatment, just like any other illness.",
+    "content": [
+      {
+        "myth": "New mothers should always be happy.",
+        "fact": "It's normal to feel a wide range of emotions, including sadness and anxiety. Postpartum depression is a medical condition, not a sign of being a bad mother.",
+        "source": {
+          "text": "Postpartum Support International",
+          "url": "https://www.postpartum.net/"
+        }
+      },
+      {
+        "myth": "Mental health issues are a sign of weakness.",
+        "fact": "Postpartum depression is a medical condition, not a character flaw. It requires support and treatment, just like any other illness.",
+        "source": {
+          "text": "World Health Organization (WHO)",
+          "url": "https://www.who.int/"
+        }
+      },
+      {
+        "myth": "Only mothers who have difficult births get postpartum depression.",
+        "fact": "Postpartum depression can affect any mother, regardless of whether the birth was easy or difficult. It is influenced by a combination of hormonal, emotional, and genetic factors.",
+        "source": {
+          "text": "National Institute of Mental Health (NIMH)",
+          "url": "https://www.nimh.nih.gov/"
+        }
+      },
+      {
+        "myth": "'Sutkeri' (postpartum confinement) means the mother cannot leave her room for 40 days.",
+        "fact": "While rest is the core principle of 'Sutkeri,' complete isolation can be harmful to a new mother's mental health. Modern interpretations encourage gentle movement, fresh air, and social connection with close family to prevent feelings of isolation and depression.",
+        "source": {
+          "text": "Nepal Journal of Obstetrics and Gynaecology",
+          "url": "#"
+        }
+      },
+      {
+        "myth": "A new mother's diet must be restricted to 'hot' foods like ginger and rice porridge to help her body heal.",
+        "fact": "While certain traditional foods can be beneficial, a balanced and nutritious diet is most important for postpartum recovery. Restricting food groups can lead to nutritional deficiencies. New mothers should consult with a healthcare provider to ensure they are getting a variety of vitamins and minerals.",
+        "source": {
+          "text": "Kathmandu University Medical Journal",
+          "url": "#"
+        }
+      }
+    ],
     "author": "UNI Cultural Insights",
     "publishDate": "2025-07-11",
     "image": "assets/images/cultural-myths.jpeg",
     "citations": [
-      "Cross-Cultural Psychiatric Research Review"
+      "Cross-Cultural Psychiatric Research Review",
+      "Postpartum Support International",
+      "World Health Organization (WHO)",
+      "National Institute of Mental Health (NIMH)"
     ],
     "relatedArticleIds": [1, 3],
     "type": "cultural-practices",
+    "contentType": "myth-fact",
     "tags": ["cultural-practices", "mental-health", "myths", "motherhood"]
   },
   {
@@ -67,13 +112,31 @@
     "title": "How Family Can Provide Support",
     "category": "Practical Guides",
     "summary": "A guide for husbands, parents, and relatives on how to effectively support a new mother.",
-    "content": "Family support is crucial. The best way to help is to listen without judgment. Offer practical help, like cooking, cleaning, or caring for the baby to allow the mother to rest. Educate yourselves about the signs of postpartum depression and encourage her to seek professional help if needed. Simple words of encouragement and validation can be incredibly powerful.",
+    "content": [
+      {
+        "tip": "Listen Without Judgment",
+        "description": "Create a safe space for her to share her feelings without fear of criticism. Validate her emotions by saying things like, 'It sounds like you're going through a lot.'"
+      },
+      {
+        "tip": "Offer Practical Help",
+        "description": "Assist with household chores like cooking, cleaning, or grocery shopping. Taking care of practical tasks can relieve significant stress."
+      },
+      {
+        "tip": "Encourage Professional Help",
+        "description": "If you notice persistent signs of sadness or anxiety, gently suggest that she speak with a doctor or a mental health professional. Offer to help find resources or make an appointment."
+      },
+      {
+        "tip": "Educate Yourself",
+        "description": "Learn about postpartum depression to better understand what she is experiencing. This will help you provide more empathetic and effective support."
+      }
+    ],
     "author": "UNI Family Support",
     "publishDate": "2025-07-14",
     "image": "assets/images/family-support.jpeg",
     "citations": [],
     "relatedArticleIds": [1, 4, 6],
     "type": "cultural-practices",
+    "contentType": "support-tips",
     "tags": ["cultural-practices", "family", "support", "husband", "parents"]
   },
   {
