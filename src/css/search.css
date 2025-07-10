@@ -60,12 +60,24 @@
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
 }
 
 .knowledge-panel h2, .community-panel h2, .expert-panel h2 {
     margin-top: 0;
     border-bottom: 2px solid #eee;
     padding-bottom: 0.5rem;
+}
+
+.result-item {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.result-item a.btn {
+    margin-top: auto;
 }
 
 /* AI Response Box */

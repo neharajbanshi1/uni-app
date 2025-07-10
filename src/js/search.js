@@ -41,7 +41,7 @@ function performSmartSearch(query) {
             loadingState.style.display = 'none';
             searchResults.style.display = 'block';
         });
-    }, 3000);
+    }, 500);
 }
 
 function analyzeQuery(query, articles, forum, experts) {
@@ -87,7 +87,7 @@ function displayResults(data) {
 
 function populateKnowledgePanel(articles) {
     const panel = document.getElementById('knowledgePanel');
-    panel.innerHTML = '<h2>📚 Knowledge</h2>';
+    panel.innerHTML = '<h2>📚 Articles and Guides</h2>';
     if (articles.length === 0) {
         panel.innerHTML += '<p>No relevant articles found.</p>';
         return;

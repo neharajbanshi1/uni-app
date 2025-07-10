@@ -33,10 +33,10 @@ Build a frontend-only prototype of UNI, a bilingual web platform addressing post
 - **Behavior**: Toggle between languages across all pages
 - **Priority**: Critical for demo
 
-#### 2. Knowledge Base
+#### 2. Articles and Guides
 - **Scope**: Searchable articles with categories
 - **Content**: 8-10 mock articles covering key topics
-- **Features**: 
+- **Features**:
   - Search functionality
   - Article categories/tags
   - Medical source citations
@@ -68,14 +68,14 @@ Build a frontend-only prototype of UNI, a bilingual web platform addressing post
 - **Features**:
   - Smart search input on the landing page.
   - 3-second loading state with "Understanding your concern..." message.
-  - Three-panel results display (Knowledge, Community, Experts).
+  - Three-panel results display (Articles and Guides, Community, Experts).
   - AI-generated response with prioritized recommendations.
   - Contextual action buttons.
 - **Priority**: Highest for demo
 
 ## Content Requirements
 
-### Knowledge Base Topics
+### Articles and Guides Topics
 Research and create mock articles covering:
 
 #### Medical Content
@@ -176,7 +176,7 @@ Research and create mock articles covering:
 - Quick access to all main features
 - Statistics about postpartum depression in Nepal
 
-#### 2. Knowledge Base
+#### 2. Articles and Guides
 - Search bar with placeholder text
 - Category filters
 - Article grid with thumbnails
@@ -213,7 +213,7 @@ Research and create mock articles covering:
 ```
 /
   - index.html (landing)
-  - knowledge-base.html
+  - articles-and-guides.html
   - article.html
   - forum.html
   - experts.html
