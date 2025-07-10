@@ -63,78 +63,61 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    const handleLinkClick = (e) => {
-        const link = e.target.closest('a');
+    const handleNavigation = (url, isPopState = false) => {
+        const mainContent = document.querySelector('main');
+        if (!mainContent) return;
 
-        if (link && link.href && new URL(link.href).origin === window.location.origin && !link.href.includes('#')) {
-            e.preventDefault();
-            const url = new URL(link.href);
+        mainContent.classList.add('is-transitioning');
 
-            document.body.classList.add('is-transitioning');
+        mainContent.addEventListener('transitionend', function onTransitionEnd() {
+            mainContent.removeEventListener('transitionend', onTransitionEnd);
 
-            setTimeout(() => {
-                fetch(url.href)
-                    .then(response => response.text())
-                    .then(html => {
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(html, 'text/html');
-                        const newMain = doc.querySelector('main');
-                        const newTitle = doc.querySelector('title').innerText;
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const newMain = doc.querySelector('main');
+                    const newTitle = doc.querySelector('title').innerText;
 
-                        if (newMain) {
-                            document.querySelector('main').innerHTML = newMain.innerHTML;
-                            document.title = newTitle;
-                            history.pushState({ path: url.href }, newTitle, url.href);
+                    if (newMain) {
+                        mainContent.innerHTML = newMain.innerHTML;
+                        document.title = newTitle;
+                        if (!isPopState) {
+                            history.pushState({ path: url.href }, '', url.href);
                         }
-                        
-                        const pageName = url.pathname.split('/').pop().replace('.html', '');
-                        if (pageName && pageName !== 'index') {
-                            loadScript(`src/js/${pageName}.js`).catch(err => console.log(`No specific script for ${pageName} or it failed to load.`));
-                        }
+                    }
 
-                        document.body.classList.remove('is-transitioning');
-                        window.scrollTo(0, 0);
-                    })
-                    .catch(err => {
-                        console.error('Failed to fetch page: ', err);
-                        window.location.href = url.href;
-                    });
-            }, 300);
-        }
+                    const pageName = url.pathname.split('/').pop().replace('.html', '');
+                    if (pageName === 'articles-and-guides' && typeof initKnowledgeBase === 'function') {
+                        initKnowledgeBase();
+                    } else if (pageName === 'forum' && typeof initForum === 'function') {
+                        initForum();
+                    } else if (pageName && pageName !== 'index') {
+                        loadScript(`src/js/${pageName}.js`).catch(err => console.log(`No specific script for ${pageName} or it failed to load.`));
+                    }
+
+                    window.scrollTo(0, 0);
+                    mainContent.classList.remove('is-transitioning');
+                })
+                .catch(err => {
+                    console.error('Failed to fetch page: ', err);
+                    window.location.href = url.href;
+                });
+        }, { once: true });
     };
 
-    document.addEventListener('click', handleLinkClick);
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (link && link.href && new URL(link.href).origin === window.location.origin && !link.href.includes('#')) {
+            e.preventDefault();
+            handleNavigation(new URL(link.href));
+        }
+    });
 
     window.addEventListener('popstate', (e) => {
         if (e.state && e.state.path) {
-            document.body.classList.add('is-transitioning');
-            setTimeout(() => {
-                fetch(e.state.path)
-                    .then(response => response.text())
-                    .then(html => {
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(html, 'text/html');
-                        const newMain = doc.querySelector('main');
-                        const newTitle = doc.querySelector('title').innerText;
-
-                        if (newMain) {
-                            document.querySelector('main').innerHTML = newMain.innerHTML;
-                            document.title = newTitle;
-                        }
-                        
-                        const pageName = new URL(e.state.path).pathname.split('/').pop().replace('.html', '');
-                        if (pageName && pageName !== 'index') {
-                            loadScript(`src/js/${pageName}.js`).catch(err => console.log(`No specific script for ${pageName} or it failed to load.`));
-                        }
-
-                        document.body.classList.remove('is-transitioning');
-                        window.scrollTo(0, 0);
-                    })
-                    .catch(err => {
-                        console.error('Failed to fetch page on popstate: ', err);
-                        window.location.reload();
-                    });
-            }, 300);
+            handleNavigation(new URL(e.state.path), true);
         }
     });
 });
