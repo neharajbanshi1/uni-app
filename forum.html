@@ -1,49 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Community Forum - UNI</title>
-  <link rel="stylesheet" href="src/css/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Forum - UNI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body
+    class="font-sans leading-normal bg-ivory text-charcoal-gray flex flex-col min-h-screen"
+  >
+    <div id="header-placeholder"></div>
 
-  <div id="header-placeholder"></div>
+    <main
+      class="p-4 mx-auto max-w-4xl flex-grow w-full transition-opacity duration-400 ease-in-out"
+    >
+      <section class="text-center py-16 px-8 bg-blush-pink rounded-lg">
+        <h1 class="text-5xl mb-4 text-charcoal-gray">
+          Welcome to Our Community
+        </h1>
+        <p class="text-2xl mb-4 text-warm-rose">
+          A place to connect, share, and find support. You are not alone.
+        </p>
+        <div
+          class="max-w-2xl mx-auto mt-8 p-6 border border-warm-rose rounded-lg bg-white shadow-md"
+        >
+          <h2 class="text-2xl mb-2 flex items-center justify-center gap-2">
+            A Safe Space for Sharing
+          </h2>
+          <p>
+            This is a supportive, anonymous community where you can freely
+            express yourself. We are all here to listen and support one another.
+            Please be kind and respectful. What is shared here, stays here.
+          </p>
+        </div>
+      </section>
 
-  <main>
-    <section class="forum-header">
-      <h1>Welcome to Our Community</h1>
-      <p class="forum-intro">A place to connect, share, and find support. You are not alone.</p>
-      <div class="safe-space-guidelines">
-        <h2>A Safe Space for Sharing</h2>
-        <p>This is a supportive, anonymous community where you can freely express yourself. We are all here to listen and support one another. Please be kind and respectful. What is shared here, stays here.</p>
-      </div>
-    </section>
+      <section
+        class="max-w-3xl mx-auto my-8 p-6 bg-white border rounded-lg shadow-md"
+      >
+        <h3 class="text-2xl mb-4">Share Your Story</h3>
+        <form id="new-post-form">
+          <textarea
+            id="new-post-text"
+            placeholder="Share your thoughts anonymously..."
+            required
+            class="w-full min-h-[100px] p-3 border rounded-md resize-y mb-4"
+          ></textarea>
+          <p class="text-sm text-charcoal-gray text-center mb-4">
+            Your post will be anonymous.
+          </p>
+          <button
+            id="submit-post-btn"
+            type="submit"
+            class="w-full py-3 bg-warm-rose text-white rounded-md font-bold hover:bg-darker-warm-rose"
+          >
+            Post
+          </button>
+        </form>
+      </section>
 
-    <section class="new-post-section">
-      <h3>Share Your Story</h3>
-      <form id="new-post-form">
-        <textarea id="new-post-text" placeholder="Share your thoughts anonymously..." required></textarea>
-        <p class="anonymous-note">Your post will be anonymous.</p>
-        <button id="submit-post-btn" type="submit">Post</button>
-      </form>
-    </section>
+      <section class="max-w-3xl mx-auto my-8">
+        <div class="mb-8 text-center">
+          <button
+            class="filter-btn bg-transparent border border-medium-gray py-2 px-4 mx-2 rounded-full transition-all duration-300 ease-in-out active"
+            data-category="all"
+          >
+            All Posts
+          </button>
+          <button
+            class="filter-btn bg-transparent border border-medium-gray py-2 px-4 mx-2 rounded-full transition-all duration-300 ease-in-out"
+            data-category="Anonymous Concerns"
+          >
+            Anonymous Concerns
+          </button>
+          <button
+            class="filter-btn bg-transparent border border-medium-gray py-2 px-4 mx-2 rounded-full transition-all duration-300 ease-in-out"
+            data-category="Cultural Conflicts"
+          >
+            Cultural Conflicts
+          </button>
+        </div>
+        <div id="posts-container" class="grid gap-6">
+          <!-- Posts will be dynamically loaded here -->
+        </div>
+      </section>
+    </main>
 
-    <section class="forum-content">
-      <div class="forum-filters">
-        <button class="filter-btn active" data-category="all">All Posts</button>
-        <button class="filter-btn" data-category="Anonymous Concerns">Anonymous Concerns</button>
-        <button class="filter-btn" data-category="Cultural Conflicts">Cultural Conflicts</button>
-      </div>
-      <div id="posts-container" class="post-list">
-        <!-- Posts will be dynamically loaded here -->
-      </div>
-    </section>
-  </main>
-
-  <script src="src/js/forum.js"></script>
-  <script src="src/js/main.js"></script>
-</body>
+    <script src="src/js/forum.js"></script>
+    <script src="src/js/main.js"></script>
+  </body>
 </html>
 
 <div id="footer-placeholder"></div>

@@ -1,40 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UNI - Login</title>
-    <link rel="stylesheet" href="src/css/styles.css">
-    <link rel="stylesheet" href="src/css/responsive.css">
-</head>
-<body>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+  </head>
+  <body class="bg-ivory">
     <div id="header-placeholder"></div>
 
-    <main>
-        <div class="login-container">
-            <div class="login-header">
-                <h2>Welcome Back</h2>
-                <p>Please enter your details to log in.</p>
-            </div>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="name@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="••••••••" required>
-                </div>
-                <button type="submit" class="btn-primary btn-block">Login</button>
-            </form>
-            <div class="login-footer">
-                <p>Don't have an account? <a href="#">Sign Up</a></p>
-            </div>
+    <main class="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-md w-full space-y-8 bg-white p-10 rounded-xl shadow-lg">
+        <div>
+          <h2
+            class="mt-6 text-center text-3xl font-extrabold text-charcoal-gray"
+          >
+            Welcome Back
+          </h2>
+          <p class="mt-2 text-center text-sm text-charcoal-gray">
+            Please enter your details to log in.
+          </p>
         </div>
+        <form id="login-form" class="mt-8 space-y-6">
+          <div class="rounded-md shadow-sm -space-y-px">
+            <div>
+              <label for="email" class="sr-only">Email address</label>
+              <input
+                type="email"
+                id="email"
+                required
+                class="appearance-none rounded-none relative block w-full px-3 py-2 border border-light-taupe placeholder-charcoal-gray text-charcoal-gray rounded-t-md focus:outline-none focus:ring-warm-rose focus:border-warm-rose focus:z-10 sm:text-sm"
+                placeholder="name@example.com"
+              />
+            </div>
+            <div>
+              <label for="password" class="sr-only">Password</label>
+              <input
+                type="password"
+                id="password"
+                required
+                class="appearance-none rounded-none relative block w-full px-3 py-2 border border-light-taupe placeholder-charcoal-gray text-charcoal-gray rounded-b-md focus:outline-none focus:ring-warm-rose focus:border-warm-rose focus:z-10 sm:text-sm"
+                placeholder="••••••••"
+              />
+            </div>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-warm-rose hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warm-rose"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+        <div class="text-sm text-center">
+          <p class="text-charcoal-gray">
+            Don't have an account?
+            <a href="#" class="font-medium text-warm-rose hover:text-opacity-90"
+              >Sign Up</a
+            >
+          </p>
+        </div>
+      </div>
     </main>
 
     <div id="footer-placeholder"></div>
     <script src="src/js/main.js"></script>
-</body>
-</html>
     <script src="src/js/login.js"></script>
+  </body>
+</html>

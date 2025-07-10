@@ -1,56 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UNI - Welcome</title>
-    <link rel="stylesheet" href="src/css/styles.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-</head>
-<body>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body
+    class="font-sans leading-normal bg-ivory text-charcoal-gray flex flex-col min-h-screen"
+  >
     <div id="header-placeholder"></div>
 
-    <main class="landing-main">
-        <section class="hero">
-            <div class="hero-content">
-                <h1>उनी : Your Safe Space for Postpartum Mental Health</h1>
-                <p class="subtitle">Bilingual. Anonymous. Culturally sensitive.</p>
-                <p>Access trusted info, share your story, and connect with experts — all in one place.</p>
-                <div class="cta-buttons">
-                    <a href="smart-search.html" class="btn btn-primary">Start Your Journey</a>
-                    <a href="#features" class="btn btn-secondary">Learn More</a>
-                </div>
-            </div>
-        </section>
+    <main
+      class="p-4 mx-auto max-w-4xl flex-grow w-full transition-opacity duration-400 ease-in-out"
+    >
+      <section
+        class="flex justify-center items-center text-center py-16 px-8 bg-blush-pink rounded-lg"
+      >
+        <div class="max-w-2xl">
+          <h1 class="text-5xl mb-4 text-charcoal-gray">
+            उनी : Your Safe Space for Postpartum Mental Health
+          </h1>
+          <p class="text-2xl mb-4 text-warm-rose">
+            Bilingual. Anonymous. Culturally sensitive.
+          </p>
+          <p class="text-lg mb-8">
+            Access trusted info, share your story, and connect with experts —
+            all in one place.
+          </p>
+          <div class="flex justify-center gap-4">
+            <a
+              href="smart-search.html"
+              class="bg-muted-lilac text-white font-bold py-3 px-8 rounded-full hover:bg-darker-muted-lilac transition-colors"
+              >Start Your Journey</a
+            >
+            <a
+              href="#features"
+              class="bg-warm-rose text-white font-bold py-3 px-8 rounded-full hover:bg-darker-warm-rose transition-colors"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </section>
 
-        <section id="features" class="features-section">
-            <h2>Our Core Features</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <img src="assets/images/articles-and-guides.jpeg" alt="Articles & Guides">
-                    <h3>Articles & Guides</h3>
-                    <p>Searchable articles with categories, medical source citations, and related articles.</p>
-                    <a href="articles-and-guides.html" class="btn btn-secondary">Explore</a>
-                </div>
-                <div class="feature-item">
-                    <img src="assets/images/community-forum.jpeg" alt="Community Forum">
-                    <h3>Community Forum</h3>
-                    <p>Browse anonymous discussions and read-only threads in a safe space.</p>
-                    <a href="forum.html" class="btn btn-secondary">Join Discussion</a>
-                </div>
-                <div class="feature-item">
-                    <img src="assets/images/experts.jpeg" alt="Expert Directory">
-                    <h3>Expert Directory</h3>
-                    <p>View profiles of healthcare providers with their specialties and qualifications.</p>
-                    <a href="experts.html" class="btn btn-secondary">Find an Expert</a>
-                </div>
-            </div>
-        </section>
+      <section id="features" class="py-16 text-center">
+        <h2 class="text-4xl mb-12">Our Core Features</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center"
+          >
+            <img
+              src="assets/images/articles-and-guides.jpeg"
+              alt="Articles & Guides"
+              class="w-full h-48 object-cover rounded-md mb-4"
+            />
+            <h3 class="text-2xl mb-2">Articles & Guides</h3>
+            <p class="text-center mb-4 flex-grow">
+              Searchable articles with categories, medical source citations, and
+              related articles.
+            </p>
+            <a
+              href="articles-and-guides.html"
+              class="bg-warm-rose text-white font-bold py-2 px-6 rounded-full hover:bg-darker-warm-rose transition-colors"
+              >Explore</a
+            >
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center"
+          >
+            <img
+              src="assets/images/community-forum.jpeg"
+              alt="Community Forum"
+              class="w-full h-48 object-cover rounded-md mb-4"
+            />
+            <h3 class="text-2xl mb-2">Community Forum</h3>
+            <p class="text-center mb-4 flex-grow">
+              Browse anonymous discussions and read-only threads in a safe
+              space.
+            </p>
+            <a
+              href="forum.html"
+              class="bg-warm-rose text-white font-bold py-2 px-6 rounded-full hover:bg-darker-warm-rose transition-colors"
+              >Join Discussion</a
+            >
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center"
+          >
+            <img
+              src="assets/images/experts.jpeg"
+              alt="Expert Directory"
+              class="w-full h-48 object-cover rounded-md mb-4"
+            />
+            <h3 class="text-2xl mb-2">Expert Directory</h3>
+            <p class="text-center mb-4 flex-grow">
+              View profiles of healthcare providers with their specialties and
+              qualifications.
+            </p>
+            <a
+              href="experts.html"
+              class="bg-warm-rose text-white font-bold py-2 px-6 rounded-full hover:bg-darker-warm-rose transition-colors"
+              >Find an Expert</a
+            >
+          </div>
+        </div>
+      </section>
     </main>
 
-    
-
     <script src="src/js/main.js"></script>
-</body>
+  </body>
 </html>
 <div id="footer-placeholder"></div>

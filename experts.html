@@ -1,38 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UNI - Expert Directory</title>
-    <link rel="stylesheet" href="src/css/styles.css">
-</head>
-<body>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body
+    class="font-sans leading-normal bg-ivory text-charcoal-gray flex flex-col min-h-screen"
+  >
     <div id="header-placeholder"></div>
 
-    <main>
-        <div class="directory-header">
-            <h1>Expert Directory</h1>
-            <p>Find trusted healthcare professionals to support your mental well-being.</p>
-        </div>
+    <main
+      class="p-4 mx-auto max-w-4xl flex-grow w-full transition-opacity duration-400 ease-in-out"
+    >
+      <div class="text-center py-8 px-4 bg-ivory mb-8">
+        <h1 class="text-4xl mb-2">Expert Directory</h1>
+        <p class="text-lg">
+          Find trusted healthcare professionals to support your mental
+          well-being.
+        </p>
+      </div>
 
-        <div class="filters">
-            <select id="specialty-filter">
-                <option value="all">All Specialties</option>
-                <!-- Options will be populated by JS -->
-            </select>
-            <select id="location-filter">
-                <option value="all">All Locations</option>
-                <!-- Options will be populated by JS -->
-            </select>
-        </div>
+      <div class="flex justify-center gap-4 mb-8">
+        <select
+          id="specialty-filter"
+          class="p-2 border border-medium-gray rounded-md"
+          aria-label="Filter by specialty"
+        >
+          <option value="all">All Specialties</option>
+          <!-- Options will be populated by JS -->
+        </select>
+        <select
+          id="location-filter"
+          class="p-2 border border-medium-gray rounded-md"
+          aria-label="Filter by location"
+        >
+          <option value="all">All Locations</option>
+          <!-- Options will be populated by JS -->
+        </select>
+      </div>
 
-        <div id="expert-grid" class="expert-grid">
-            <!-- Expert cards will be injected here by JavaScript -->
-        </div>
+      <div
+        id="expert-grid"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+      >
+        <!-- Expert cards will be injected here by JavaScript -->
+      </div>
     </main>
 
     <script src="src/js/main.js"></script>
     <script src="src/js/experts.js"></script>
-</body>
+  </body>
 </html>
 <div id="footer-placeholder"></div>

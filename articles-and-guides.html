@@ -1,43 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UNI - Articles & Guides</title>
-    <link rel="stylesheet" href="src/css/styles.css">
-    <link rel="stylesheet" href="src/css/responsive.css">
-</head>
-<body>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body
+    class="font-sans leading-normal bg-ivory text-charcoal-gray flex flex-col min-h-screen"
+  >
     <div id="header-placeholder"></div>
 
-    <main class="container">
-        <header class="page-header">
-            <h1>Articles & Guides</h1>
-            <p>Find articles and resources to support your mental wellness journey.</p>
-        </header>
+    <main
+      class="p-4 mx-auto max-w-4xl flex-grow w-full transition-opacity duration-400 ease-in-out"
+    >
+      <header class="text-center py-16 px-8">
+        <h1 class="text-5xl mb-4 text-charcoal-gray">Articles & Guides</h1>
+        <p class="text-xl text-warm-rose">
+          Find articles and resources to support your mental wellness journey.
+        </p>
+      </header>
 
-        <section class="search-and-filter-section">
-            <div class="search-container">
-                <form id="search-form" role="search">
-                    <input type="search" id="search-input" placeholder="Search articles..." aria-label="Search articles">
-                    <button type="submit">Search</button>
-                </form>
-            </div>
-            <div class="filter-container">
-                <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="Medical Content">Medical</button>
-                <button class="filter-btn" data-category="Practical Guides">Guides</button>
-            </div>
-        </section>
+      <section class="mb-8">
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <div class="flex-grow">
+            <form id="search-form" role="search" class="flex">
+              <input
+                type="search"
+                id="search-input"
+                placeholder="Search articles..."
+                aria-label="Search articles"
+                class="w-full p-3 rounded-l-full border-2 border-warm-rose focus:outline-none focus:border-darker-warm-rose"
+              />
+              <button
+                type="submit"
+                class="bg-warm-rose text-white font-bold py-3 px-6 rounded-r-full hover:bg-darker-warm-rose transition-colors"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+          <div class="flex gap-2 justify-center">
+            <button
+              class="filter-btn bg-muted-lilac text-white font-bold py-2 px-6 rounded-full hover:bg-darker-muted-lilac transition-colors"
+              data-category="all"
+            >
+              All
+            </button>
+            <button
+              class="filter-btn bg-muted-lilac text-white font-bold py-2 px-6 rounded-full hover:bg-darker-muted-lilac transition-colors"
+              data-category="Medical Content"
+            >
+              Medical
+            </button>
+            <button
+              class="filter-btn bg-muted-lilac text-white font-bold py-2 px-6 rounded-full hover:bg-darker-muted-lilac transition-colors"
+              data-category="Practical Guides"
+            >
+              Guides
+            </button>
+          </div>
+        </div>
+      </section>
 
-        <section id="article-grid" class="article-grid-container">
-            <!-- Articles will be dynamically loaded here -->
-        </section>
+      <section
+        id="article-grid"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        <!-- Articles will be dynamically loaded here -->
+      </section>
     </main>
 
     <script src="src/js/main.js"></script>
     <script src="src/js/knowledge-base.js"></script>
     <script src="src/js/search.js"></script>
-</body>
+  </body>
 </html>
 <div id="footer-placeholder"></div>
