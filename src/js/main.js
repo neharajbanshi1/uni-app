@@ -52,4 +52,89 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Load the footer
     loadComponent('components/footer.html', 'footer-placeholder');
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js').then(registration => {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, err => {
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+    }
+
+    const handleLinkClick = (e) => {
+        const link = e.target.closest('a');
+
+        if (link && link.href && new URL(link.href).origin === window.location.origin && !link.href.includes('#')) {
+            e.preventDefault();
+            const url = new URL(link.href);
+
+            document.body.classList.add('is-transitioning');
+
+            setTimeout(() => {
+                fetch(url.href)
+                    .then(response => response.text())
+                    .then(html => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html');
+                        const newMain = doc.querySelector('main');
+                        const newTitle = doc.querySelector('title').innerText;
+
+                        if (newMain) {
+                            document.querySelector('main').innerHTML = newMain.innerHTML;
+                            document.title = newTitle;
+                            history.pushState({ path: url.href }, newTitle, url.href);
+                        }
+                        
+                        const pageName = url.pathname.split('/').pop().replace('.html', '');
+                        if (pageName && pageName !== 'index') {
+                            loadScript(`src/js/${pageName}.js`).catch(err => console.log(`No specific script for ${pageName} or it failed to load.`));
+                        }
+
+                        document.body.classList.remove('is-transitioning');
+                        window.scrollTo(0, 0);
+                    })
+                    .catch(err => {
+                        console.error('Failed to fetch page: ', err);
+                        window.location.href = url.href;
+                    });
+            }, 300);
+        }
+    };
+
+    document.addEventListener('click', handleLinkClick);
+
+    window.addEventListener('popstate', (e) => {
+        if (e.state && e.state.path) {
+            document.body.classList.add('is-transitioning');
+            setTimeout(() => {
+                fetch(e.state.path)
+                    .then(response => response.text())
+                    .then(html => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html');
+                        const newMain = doc.querySelector('main');
+                        const newTitle = doc.querySelector('title').innerText;
+
+                        if (newMain) {
+                            document.querySelector('main').innerHTML = newMain.innerHTML;
+                            document.title = newTitle;
+                        }
+                        
+                        const pageName = new URL(e.state.path).pathname.split('/').pop().replace('.html', '');
+                        if (pageName && pageName !== 'index') {
+                            loadScript(`src/js/${pageName}.js`).catch(err => console.log(`No specific script for ${pageName} or it failed to load.`));
+                        }
+
+                        document.body.classList.remove('is-transitioning');
+                        window.scrollTo(0, 0);
+                    })
+                    .catch(err => {
+                        console.error('Failed to fetch page on popstate: ', err);
+                        window.location.reload();
+                    });
+            }, 300);
+        }
+    });
 });

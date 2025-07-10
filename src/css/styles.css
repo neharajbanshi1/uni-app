@@ -48,6 +48,21 @@ body {
     min-height: 100vh;
 }
 
+main {
+    flex: 1;
+    width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 960px;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    transform: translateY(0);
+}
+
+body.is-transitioning main {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
 header {
     background: linear-gradient(45deg, var(--darker-muted-lilac), var(--darker-warm-rose));
     color: var(--white);
