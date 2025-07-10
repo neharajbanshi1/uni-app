@@ -1,42 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UNI - Smart Search</title>
-    <link rel="stylesheet" href="src/css/styles.css">
-    <link rel="stylesheet" href="src/css/search.css">
-</head>
-<body>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+  </head>
+  <body class="bg-ivory">
     <div id="header-placeholder"></div>
 
-    <main>
-        <div class="smart-search-container">
-            <input type="text" id="smartSearchInput" placeholder="What's on your mind?">
-            <div class="loading-state" id="loadingState" style="display:none;">
-                <div class="spinner"></div>
-                <p>Understanding your concern...</p>
-            </div>
-            <div class="search-results" id="searchResults" style="display:none;">
-                <div class="ai-response" id="aiResponse"></div>
-                <div class="results-grid">
-                    <div class="knowledge-panel" id="knowledgePanel">
-                        <h2>📚 Articles and Guides</h2>
-                    </div>
-                    <div class="community-panel" id="communityPanel">
-                        <h2>👥 Community</h2>
-                    </div>
-                    <div class="expert-panel" id="expertPanel">
-                        <h2>🩺 Experts</h2>
-                    </div>
-                </div>
-                <div class="action-buttons" id="actionButtons"></div>
-            </div>
+    <main class="py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <input
+          type="text"
+          id="smartSearchInput"
+          class="w-full max-w-xl mx-auto text-lg px-6 py-4 rounded-full border-2 border-light-taupe focus:ring-warm-rose focus:border-warm-rose shadow-sm"
+          placeholder="What's on your mind?"
+        />
+        <div id="loadingState" class="mt-8 text-center" style="display: none">
+          <div
+            class="inline-block w-8 h-8 border-4 border-t-warm-rose border-r-warm-rose border-b-warm-rose border-l-ivory rounded-full animate-spin"
+          ></div>
+          <p class="mt-4 text-lg text-charcoal-gray">
+            Understanding your concern...
+          </p>
         </div>
+        <div id="searchResults" class="mt-8" style="display: none">
+          <div
+            id="aiResponse"
+            class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-lg text-left mb-8 shadow-sm"
+          ></div>
+          <div class="grid md:grid-cols-3 gap-8 text-left">
+            <div
+              id="knowledgePanel"
+              class="bg-white p-6 rounded-lg shadow-md border border-gray-200"
+            >
+              <h2
+                class="text-xl font-bold mb-4 border-b pb-2 flex items-center gap-2"
+              >
+                <span class="text-2xl">📚</span> Articles and Guides
+              </h2>
+            </div>
+            <div
+              id="communityPanel"
+              class="bg-white p-6 rounded-lg shadow-md border border-gray-200"
+            >
+              <h2
+                class="text-xl font-bold mb-4 border-b pb-2 flex items-center gap-2"
+              >
+                <span class="text-2xl">👥</span> Community
+              </h2>
+            </div>
+            <div
+              id="expertPanel"
+              class="bg-white p-6 rounded-lg shadow-md border border-gray-200"
+            >
+              <h2
+                class="text-xl font-bold mb-4 border-b pb-2 flex items-center gap-2"
+              >
+                <span class="text-2xl">🩺</span> Experts
+              </h2>
+            </div>
+          </div>
+          <div
+            id="actionButtons"
+            class="mt-12 flex justify-center flex-wrap gap-4"
+          ></div>
+        </div>
+      </div>
     </main>
 
     <div id="footer-placeholder"></div>
     <script src="src/js/main.js"></script>
     <script src="src/js/search.js"></script>
-</body>
+  </body>
 </html>
