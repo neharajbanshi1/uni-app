@@ -893,12 +893,11 @@ footer {
 
 .availability-status {
     font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #6c757d; /* Default */
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    color: white;
+    background-color: var(--color-muted-lilac);
     display: inline-block;
-    min-width: 120px;
     text-align: center;
     transition: background-color 0.3s ease;
 }

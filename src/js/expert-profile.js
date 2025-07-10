@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const availabilityStatus = document.getElementById('availability-status');
         const bookBtn = document.getElementById('book-appointment-btn');
 
-        availabilityStatus.textContent = 'Select a date to check';
+        availabilityStatus.textContent = 'Select a Date';
 
         datePicker.addEventListener('change', () => {
             const selectedDate = new Date(datePicker.value);
