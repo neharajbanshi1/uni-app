@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const expertId = parseInt(urlParams.get('id'));
 
+    // Mock login status
+    const isLoggedIn = () => sessionStorage.getItem('isLoggedIn') === 'true';
+
     if (!expertId) {
         profileContainer.innerHTML = '<p>Expert not found. Please return to the directory.</p>';
         return;
@@ -47,25 +50,63 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3>About ${expert.name.split(' ')[1]}</h3>
                     <p>${expert.bio}</p>
                 </div>
-                <div class="mock-booking-form">
-                    <h3>Contact ${expert.name} (Mock Form)</h3>
-                    <form onsubmit="event.preventDefault(); alert('This is a mock form and does not send real messages.');">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit">Send Message</button>
-                    </form>
+                <div class="booking-section">
+                    <h3>Book an Appointment</h3>
+                    <div class="form-group">
+                        <label for="appointment-date">Select a Date:</label>
+                        <input type="date" id="appointment-date" class="form-control">
+                    </div>
+                    <p><strong>Availability:</strong> <span id="availability-status" class="availability-status"></span></p>
+                    <button id="book-appointment-btn" class="btn-primary" disabled>Book Appointment</button>
+                    <p id="booking-confirmation" class="booking-confirmation" style="display:none;">Your appointment has been successfully booked!</p>
                 </div>
             </div>
         `;
+
+        const datePicker = document.getElementById('appointment-date');
+        const availabilityStatus = document.getElementById('availability-status');
+        const bookBtn = document.getElementById('book-appointment-btn');
+
+        datePicker.addEventListener('change', () => {
+            const selectedDate = new Date(datePicker.value);
+            const dayOfWeek = selectedDate.getDay();
+            let status = 'Not Available';
+
+            // Mock availability logic
+            if (dayOfWeek > 0 && dayOfWeek < 6) { // Monday to Friday
+                status = 'Available';
+            }
+
+            availabilityStatus.textContent = status;
+            availabilityStatus.className = `availability-status ${status.toLowerCase().replace(/\s/g, '-')}`;
+            bookBtn.disabled = status !== 'Available';
+        });
+
+        const loginModal = document.getElementById('login-modal');
+        const closeBtn = document.querySelector('.close-btn');
+
+        if (bookBtn) {
+            bookBtn.addEventListener('click', () => {
+                if (!isLoggedIn()) {
+                    loginModal.style.display = 'block';
+                    return;
+                }
+                const confirmationMsg = document.getElementById('booking-confirmation');
+                confirmationMsg.style.display = 'block';
+                setTimeout(() => {
+                    confirmationMsg.style.display = 'none';
+                }, 3000);
+            });
+        }
+
+        closeBtn.onclick = function() {
+            loginModal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == loginModal) {
+                loginModal.style.display = "none";
+            }
+        }
     }
 });

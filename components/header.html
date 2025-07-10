@@ -7,8 +7,28 @@
         <li><a href="articles-and-guides.html">Articles & Guides</a></li>
         <li><a href="forum.html">Community</a></li>
         <li><a href="experts.html">Experts</a></li>
+        <li><a href="login.html" id="login-btn" class="btn btn-primary">Login</a></li>
+        <li><a href="#" id="logout-btn" class="btn btn-secondary" style="display:none;">Logout</a></li>
       </ul>
       <div id="google_translate_element"></div>
     </div>
   </nav>
 </header>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const loginBtn = document.getElementById('login-btn');
+    const logoutBtn = document.getElementById('logout-btn');
+    const isLoggedIn = () => sessionStorage.getItem('isLoggedIn') === 'true';
+
+    if (isLoggedIn()) {
+      loginBtn.style.display = 'none';
+      logoutBtn.style.display = 'block';
+    }
+
+    logoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      sessionStorage.removeItem('isLoggedIn');
+      window.location.reload();
+    });
+  });
+</script>

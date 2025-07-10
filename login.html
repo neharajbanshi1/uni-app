@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNI - Expert Profile</title>
+    <title>UNI - Login</title>
     <link rel="stylesheet" href="src/css/styles.css">
     <link rel="stylesheet" href="src/css/responsive.css">
 </head>
@@ -11,14 +11,7 @@
     <div id="header-placeholder"></div>
 
     <main>
-        <div id="expert-profile-container" class="expert-profile-container">
-            <!-- Full expert profile will be injected here by JavaScript -->
-        </div>
-    </main>
-
-    <div id="login-modal" class="modal" style="display:none;">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
+        <div class="login-container">
             <div class="login-header">
                 <h2>Welcome Back</h2>
                 <p>Please enter your details to log in.</p>
@@ -34,12 +27,14 @@
                 </div>
                 <button type="submit" class="btn-primary btn-block">Login</button>
             </form>
+            <div class="login-footer">
+                <p>Don't have an account? <a href="#">Sign Up</a></p>
+            </div>
         </div>
-    </div>
+    </main>
 
+    <div id="footer-placeholder"></div>
     <script src="src/js/main.js"></script>
-    <script src="src/js/expert-profile.js"></script>
-    <script src="src/js/login.js"></script>
 </body>
 </html>
-<div id="footer-placeholder"></div>
+    <script src="src/js/login.js"></script>
