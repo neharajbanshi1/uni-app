@@ -61,18 +61,24 @@ function analyzeQuery(query, articles, forum, experts) {
 
     const queryTags = lowerCaseQuery.split(/\s+/);
 
-    const filterByTags = (items) => {
-        return items.filter(item =>
-            queryTags.some(tag =>
-                (item.tags || []).some(itemTag => itemTag.includes(tag))
-            )
-        ).slice(0, 3);
+    const filterByTags = (items, isExpert = false) => {
+        return items.filter(item => {
+            const searchableContent = [
+                ...(item.tags || []),
+                ...(isExpert ? item.specialties || [] : []),
+                (isExpert ? item.name || '' : ''),
+                (isExpert ? item.credentials || '' : ''),
+                (isExpert ? item.bio || '' : '')
+            ].join(' ').toLowerCase();
+
+            return queryTags.some(tag => searchableContent.includes(tag));
+        }).slice(0, 3);
     };
 
     return {
         knowledge: filterByTags(articles),
         community: filterByTags(forum),
-        experts: filterByTags(experts),
+        experts: filterByTags(experts, true),
         context: { query, urgency }
     };
 }
