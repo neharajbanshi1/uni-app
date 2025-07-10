@@ -43,6 +43,9 @@ body {
     line-height: 1.6;
     background-color: var(--color-primary-bg);
     color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -95,6 +98,8 @@ main {
     padding: 1rem;
     margin: 0 auto;
     max-width: 960px;
+    flex: 1;
+    width: 100%;
 }
 
 /* Forum Page Styles */
