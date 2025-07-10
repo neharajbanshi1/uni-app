@@ -73,6 +73,12 @@ Build a frontend-only prototype of UNI, a bilingual web platform addressing post
   - Contextual action buttons.
 - **Priority**: Highest for demo
 
+#### 6. Text-to-Speech Functionality
+- **Scope**: A button to read the page content aloud.
+- **Implementation**: Uses the browser's built-in SpeechSynthesis API.
+- **Behavior**: Toggles between playing and stopping the speech. The button is available on all pages in the header.
+- **Priority**: High for accessibility.
+
 ## Content Requirements
 
 ### Articles and Guides Topics

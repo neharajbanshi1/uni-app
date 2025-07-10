@@ -738,13 +738,6 @@ main {
     margin-bottom: 2rem;
 }
 
-footer {
-    background-color: var(--darker-warm-rose);
-    color: var(--white);
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 2rem;
-}
 
 
 
@@ -842,7 +835,7 @@ footer {
 
 .footer-column p, .footer-column ul {
     font-size: 0.9rem;
-    color: var(--light-taupe);
+    color: var(--white);
 }
 
 .footer-column ul {
@@ -855,7 +848,7 @@ footer {
 }
 
 .footer-column ul li a {
-    color: var(--light-taupe);
+    color: var(--white);
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -873,7 +866,7 @@ footer {
 .footer-bottom {
     text-align: center;
     padding: 1rem;
-    border-top: 1px solid var(--warm-taupe);
+    border-top: 1px solid var(--color-blush-pink);
     margin-top: 1rem;
 }
 
@@ -882,7 +875,7 @@ footer {
 }
 
 .footer-bottom a {
-    color: var(--light-taupe);
+    color: var(--white);
     text-decoration: none;
 }
 .booking-section {
