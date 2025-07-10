@@ -78,20 +78,32 @@ nav {
     box-shadow: 0 0 15px 5px var(--color-blush-pink);
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-}
-
-nav ul li a {
+.nav-right a,
+.nav-right .btn {
     text-decoration: none;
     color: var(--white);
     font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
 }
 
 #google_translate_element {
     min-width: 110px; /* Prevent layout shift */
+}
+/* Style the Google Translate dropdown to match the buttons */
+.goog-te-combo {
+    padding: 0.8rem 1rem;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--color-blush-pink);
+    color: var(--color-charcoal-gray);
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
 }
 #text-to-speech-btn {
     background-color: var(--color-muted-lilac);
