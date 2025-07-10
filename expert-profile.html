@@ -1,45 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UNI - Expert Profile</title>
-    <link rel="stylesheet" href="src/css/styles.css">
-    <link rel="stylesheet" href="src/css/responsive.css">
-</head>
-<body>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body
+    class="font-sans leading-normal bg-ivory text-charcoal-gray flex flex-col min-h-screen"
+  >
     <div id="header-placeholder"></div>
 
-    <main>
-        <div id="expert-profile-container" class="expert-profile-container">
-            <!-- Full expert profile will be injected here by JavaScript -->
-        </div>
+    <main
+      class="p-4 mx-auto max-w-4xl flex-grow w-full transition-opacity duration-400 ease-in-out"
+    >
+      <div
+        id="expert-profile-container"
+        class="bg-white p-8 rounded-lg shadow-lg"
+      >
+        <!-- Full expert profile will be injected here by JavaScript -->
+      </div>
     </main>
 
-    <div id="login-modal" class="modal" style="display:none;">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <div class="login-header">
-                <h2>Welcome Back</h2>
-                <p>Please enter your details to log in.</p>
-            </div>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="name@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="••••••••" required>
-                </div>
-                <button type="submit" class="btn-primary btn-block">Login</button>
-            </form>
+    <div
+      id="login-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+      style="display: none"
+    >
+      <div class="relative bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
+        <span
+          class="close-btn absolute top-2 right-2 text-gray-500 hover:text-gray-800 cursor-pointer"
+          >&times;</span
+        >
+        <div class="text-center mb-6">
+          <h2 class="text-2xl font-bold mb-2">Welcome Back</h2>
+          <p>Please enter your details to log in.</p>
         </div>
+        <form id="login-form">
+          <div class="mb-4">
+            <label
+              for="email"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              placeholder="name@example.com"
+              required
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div class="mb-6">
+            <label
+              for="password"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              placeholder="••••••••"
+              required
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-warm-rose text-white font-bold py-2 px-4 rounded-md hover:bg-darker-warm-rose transition-colors"
+          >
+            Login
+          </button>
+        </form>
+      </div>
     </div>
 
     <script src="src/js/main.js"></script>
     <script src="src/js/expert-profile.js"></script>
     <script src="src/js/login.js"></script>
-</body>
+  </body>
 </html>
 <div id="footer-placeholder"></div>
