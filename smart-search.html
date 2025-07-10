@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNI - Smart Search</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/search.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="smart-search-container">
+            <input type="text" id="smartSearchInput" placeholder="What's on your mind?">
+            <div class="loading-state" id="loadingState" style="display:none;">
+                <div class="spinner"></div>
+                <p>Understanding your concern...</p>
+            </div>
+            <div class="search-results" id="searchResults" style="display:none;">
+                <div class="ai-response" id="aiResponse"></div>
+                <div class="results-grid">
+                    <div class="knowledge-panel" id="knowledgePanel">
+                        <h2>📚 Knowledge</h2>
+                    </div>
+                    <div class="community-panel" id="communityPanel">
+                        <h2>👥 Community</h2>
+                    </div>
+                    <div class="expert-panel" id="expertPanel">
+                        <h2>🩺 Experts</h2>
+                    </div>
+                </div>
+                <div class="action-buttons" id="actionButtons"></div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="src/js/main.js"></script>
+    <script src="src/js/search.js"></script>
+</body>
+</html>

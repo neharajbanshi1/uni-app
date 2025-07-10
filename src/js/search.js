@@ -1,76 +1,196 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const searchForm = document.getElementById('search-form');
-    const searchInput = document.getElementById('search-input');
-    const articleGrid = document.getElementById('article-grid');
-
-    let articles = [];
-
-    // Fetch articles to search against
-    const fetchSearchableData = async () => {
-        try {
-            const response = await fetch('assets/data/articles.json');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+    const searchInput = document.getElementById('smartSearchInput');
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                const query = searchInput.value;
+                if (window.location.pathname.endsWith('smart-search.html')) {
+                    performSmartSearch(query);
+                } else {
+                    window.location.href = `smart-search.html?q=${encodeURIComponent(query)}`;
+                }
             }
-            articles = await response.json();
-        } catch (error) {
-            console.error("Could not fetch articles for search:", error);
-        }
-    };
-
-    // Re-usable render function for search results
-    const renderSearchResults = (results) => {
-        if (!articleGrid) return;
-        articleGrid.innerHTML = ''; // Clear existing articles
-
-        if (results.length === 0) {
-            articleGrid.innerHTML = '<p>No articles match your search.</p>';
-            return;
-        }
-
-        results.forEach(article => {
-            const articleCard = document.createElement('div');
-            articleCard.className = 'post-preview'; // Use the same class as forum posts
-            articleCard.innerHTML = `
-                <div class="post-header">
-                    <span class="post-category">${article.category}</span>
-                    <h3 class="post-title">${article.title}</h3>
-                </div>
-                <div class="post-body">
-                    <p>${article.summary}</p>
-                    <a href="article.html?id=${article.id}" class="profile-link">Read More</a>
-                </div>
-            `;
-            articleGrid.appendChild(articleCard);
         });
-    };
-
-    const handleSearch = (event) => {
-        event.preventDefault();
-        const searchTerm = searchInput.value.toLowerCase().trim();
-
-        if (searchTerm === '') {
-            // If search is cleared, render all articles (or delegate back to knowledge-base.js)
-            // For simplicity here, we'll just show all.
-            renderSearchResults(articles);
-            return;
-        }
-
-        const filteredArticles = articles.filter(article => {
-            return article.title.toLowerCase().includes(searchTerm) ||
-                   article.summary.toLowerCase().includes(searchTerm) ||
-                   article.content.toLowerCase().includes(searchTerm);
-        });
-
-        renderSearchResults(filteredArticles);
-    };
-
-    // Event Listeners
-    if (searchForm) {
-        searchForm.addEventListener('submit', handleSearch);
-        searchInput.addEventListener('keyup', handleSearch); // Live search
     }
 
-    // Initial data fetch
-    fetchSearchableData();
+    if (window.location.pathname.endsWith('smart-search.html')) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('q');
+        if (query) {
+            document.getElementById('smartSearchInput').value = query;
+            performSmartSearch(query);
+        }
+    }
 });
+
+function performSmartSearch(query) {
+    const loadingState = document.getElementById('loadingState');
+    const searchResults = document.getElementById('searchResults');
+
+    loadingState.style.display = 'block';
+    searchResults.style.display = 'none';
+
+    setTimeout(() => {
+        Promise.all([
+            fetch('../assets/data/articles.json').then(res => res.json()),
+            fetch('../assets/data/forum.json').then(res => res.json()),
+            fetch('../assets/data/experts.json').then(res => res.json())
+        ]).then(([articles, forum, experts]) => {
+            const results = analyzeQuery(query, articles, forum, experts);
+            displayResults(results);
+            loadingState.style.display = 'none';
+            searchResults.style.display = 'block';
+        });
+    }, 3000);
+}
+
+function analyzeQuery(query, articles, forum, experts) {
+    const lowerCaseQuery = query.toLowerCase();
+    let urgency = 'low';
+
+    const keywords = {
+        crisis: ['hurt', 'suicide', 'can\'t cope', 'emergency'],
+        high: ['depressed', 'anxious', 'hopeless'],
+        moderate: ['sad', 'tired', 'pain', 'restrictions'],
+        low: ['family', 'tradition', 'mother-in-law', 'feeding', 'milk', 'nursing', 'latch']
+    };
+
+    if (keywords.crisis.some(k => lowerCaseQuery.includes(k))) urgency = 'crisis';
+    else if (keywords.high.some(k => lowerCaseQuery.includes(k))) urgency = 'high';
+    else if (keywords.moderate.some(k => lowerCaseQuery.includes(k))) urgency = 'moderate';
+
+    const queryTags = lowerCaseQuery.split(/\s+/);
+
+    const filterByTags = (items) => {
+        return items.filter(item =>
+            queryTags.some(tag =>
+                (item.tags || []).some(itemTag => itemTag.includes(tag))
+            )
+        ).slice(0, 3);
+    };
+
+    return {
+        knowledge: filterByTags(articles),
+        community: filterByTags(forum),
+        experts: filterByTags(experts),
+        context: { query, urgency }
+    };
+}
+
+function displayResults(data) {
+    populateKnowledgePanel(data.knowledge);
+    populateCommunityPanel(data.community);
+    populateExpertPanel(data.experts);
+    generateAIResponse(data.context);
+    showActionButtons(data.context.urgency);
+}
+
+function populateKnowledgePanel(articles) {
+    const panel = document.getElementById('knowledgePanel');
+    panel.innerHTML = '<h2>📚 Knowledge</h2>';
+    if (articles.length === 0) {
+        panel.innerHTML += '<p>No relevant articles found.</p>';
+        return;
+    }
+    articles.forEach(article => {
+        panel.innerHTML += `
+            <div class="result-item">
+                <h3>${article.title}</h3>
+                <p>${article.summary}</p>
+                <a href="article.html?id=${article.id}" class="btn btn-secondary">Read more</a>
+            </div>
+        `;
+    });
+}
+
+function populateCommunityPanel(posts) {
+    const panel = document.getElementById('communityPanel');
+    panel.innerHTML = '<h2>👥 Community</h2>';
+    if (posts.length === 0) {
+        panel.innerHTML += '<p>No relevant discussions found.</p>';
+        return;
+    }
+    posts.forEach(post => {
+        panel.innerHTML += `
+            <div class="result-item">
+                <h3>${post.title}</h3>
+                <p>${post.body.substring(0, 100)}...</p>
+                <p><em>${post.activity}</em></p>
+                <a href="forum.html?id=${post.id}" class="btn btn-secondary">Join discussion</a>
+            </div>
+        `;
+    });
+}
+
+function populateExpertPanel(experts) {
+    const panel = document.getElementById('expertPanel');
+    panel.innerHTML = '<h2>🩺 Experts</h2>';
+    if (experts.length === 0) {
+        panel.innerHTML += '<p>No relevant experts found.</p>';
+        return;
+    }
+    experts.forEach(expert => {
+        panel.innerHTML += `
+            <div class="result-item">
+                <h3>${expert.name}</h3>
+                <p>${expert.credentials}</p>
+                <p><strong>${expert.availability}</strong></p>
+                <p>⭐ ${expert.rating}</p>
+                <a href="expert-profile.html?id=${expert.id}" class="btn btn-secondary">View Profile</a>
+            </div>
+        `;
+    });
+}
+
+function generateAIResponse(context) {
+    const aiResponse = document.getElementById('aiResponse');
+    let responseHTML = `<p>It's brave to ask for help. It sounds like you're going through a lot right now.</p>`;
+    let recommendations = [];
+
+    switch (context.urgency) {
+        case 'crisis':
+            responseHTML = `<p>It sounds like you are in crisis. Please reach out for immediate help.</p>`;
+            recommendations = [
+                { text: 'Contact a crisis hotline immediately.', priority: 'red' },
+                { text: 'Talk to a trusted friend or family member.', priority: 'yellow' },
+                { text: 'Find a safe space.', priority: 'green' }
+            ];
+            break;
+        case 'high':
+            recommendations = [
+                { text: 'Book an appointment with a mental health professional.', priority: 'red' },
+                { text: 'Read our article on Postpartum Depression.', priority: 'yellow' },
+                { text: 'Join an anonymous discussion to share your feelings.', priority: 'green' }
+            ];
+            break;
+        case 'moderate':
+            recommendations = [
+                { text: 'Read our articles on self-care and family support.', priority: 'yellow' },
+                { text: 'Join a community discussion on similar topics.', priority: 'green' },
+                { text: 'Consider talking to a counselor.', priority: 'green' }
+            ];
+            break;
+        default: // low
+            recommendations = [
+                { text: 'Explore our knowledge base for more information.', priority: 'green' },
+                { text: 'See what others are saying in the community forum.', priority: 'green' },
+                { text: 'Learn about the experts available to help.', priority: 'green' }
+            ];
+    }
+
+    recommendations.forEach(rec => {
+        responseHTML += `<div class="recommendation priority-${rec.priority}">${rec.text}</div>`;
+    });
+
+    aiResponse.innerHTML = responseHTML;
+}
+
+function showActionButtons(urgency) {
+    const actionButtons = document.getElementById('actionButtons');
+    actionButtons.innerHTML = `
+        <a href="#" class="btn btn-primary">Create my support plan</a>
+        <a href="forum.html" class="btn btn-primary">Join anonymous discussion</a>
+        <a href="experts.html" class="btn btn-primary">Book expert consultation</a>
+        <a href="#" class="btn btn-primary">Get daily check-ins</a>
+    `;
+}

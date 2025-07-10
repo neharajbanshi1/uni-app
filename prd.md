@@ -1,7 +1,7 @@
 # UNI Platform - Project Requirements Document
 
 ## Project Overview
-Build a frontend-only prototype of UNI, a bilingual web platform addressing postpartum mental health taboos in Nepal. The prototype will demonstrate core UX/UI functionality with mock data for a 3-minute hackathon presentation.
+Build a frontend-only prototype of UNI, a bilingual web platform addressing postpartum mental health taboos in Nepal. The prototype will demonstrate core UX/UI functionality with mock data for a 3-minute hackathon presentation. This version includes a new "Smart Search" feature to provide AI-enhanced results.
 
 ## Technical Specifications
 
@@ -19,12 +19,11 @@ Build a frontend-only prototype of UNI, a bilingual web platform addressing post
 ## Core Features & User Flow
 
 ### Primary User Journey
-1. **Landing Page** → Language selection
-2. **Knowledge Base** → Search "postpartum depression" 
-3. **Article View** → Read myth-busting content
-4. **Community Forum** → Browse anonymous discussions
-5. **Expert Directory** → View healthcare providers
-6. **Expert Profile** → Contact form (mock)
+1. **Landing Page** → Use Smart Search for "feeling sad"
+2. **Smart Search Results** → View personalized results
+3. **Article View** → Read recommended article
+4. **Community Forum** → Join relevant discussion
+5. **Expert Directory** → Find an available expert
 
 ### Feature Requirements
 
@@ -63,6 +62,16 @@ Build a frontend-only prototype of UNI, a bilingual web platform addressing post
   - Location/contact information
   - Mock booking interface
 - **Priority**: Critical for demo
+
+#### 5. Smart Search
+- **Scope**: AI-powered search connecting users to all platform resources.
+- **Features**:
+  - Smart search input on the landing page.
+  - 3-second loading state with "Understanding your concern..." message.
+  - Three-panel results display (Knowledge, Community, Experts).
+  - AI-generated response with prioritized recommendations.
+  - Contextual action buttons.
+- **Priority**: Highest for demo
 
 ## Content Requirements
 
@@ -209,12 +218,14 @@ Research and create mock articles covering:
   - forum.html
   - experts.html
   - expert-profile.html
+  - smart-search.html
   /components
     - header.html
   /src
     /css
       - styles.css
       - responsive.css
+      - search.css
     /js
       - main.js
       - search.js
@@ -225,9 +236,9 @@ Research and create mock articles covering:
 ```
 
 ### Mock Data Structure
-- **Articles**: JSON with title, content, author, date, category
-- **Forum Posts**: JSON with anonymous ID, title, content, replies
-- **Providers**: JSON with profile details, specialties, contact info
+- **Articles**: JSON with title, content, author, date, category, `type`, and `tags`.
+- **Forum Posts**: JSON with anonymous ID, title, content, replies, `tags`, and `activity`.
+- **Providers**: JSON with profile details, specialties, contact info, `availability`, and `rating`.
 
 ### Performance Considerations
 - Optimize images for web
@@ -239,11 +250,14 @@ Research and create mock articles covering:
 
 ### Demo Functionality
 - [ ] Language toggle works across all pages
-- [ ] Search returns relevant results
-- [ ] All navigation links functional
-- [ ] Responsive design on mobile/desktop
-- [ ] Professional visual design
-- [ ] Cultural authenticity in content
+- [x] Search returns relevant results
+- [x] Smart Search processes query and displays three panels.
+- [x] AI response generates appropriate recommendations.
+- [x] Action buttons are displayed.
+- [x] All navigation links functional
+- [x] Responsive design on mobile/desktop
+- [x] Professional visual design
+- [x] Cultural authenticity in content
 
 ### User Experience
 - [ ] Intuitive navigation flow

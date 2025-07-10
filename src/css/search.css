@@ -1,0 +1,112 @@
+/* Smart Search Container */
+.smart-search-container {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+#smartSearchInput {
+    width: 80%;
+    max-width: 600px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#smartSearchInput:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.25);
+}
+
+/* Loading State */
+.loading-state {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.spinner {
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Search Results */
+.search-results {
+    margin-top: 2rem;
+    padding: 0 2rem;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.knowledge-panel, .community-panel, .expert-panel {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.knowledge-panel h2, .community-panel h2, .expert-panel h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+/* AI Response Box */
+.ai-response {
+    background-color: #eaf4ff;
+    border-left: 5px solid #007bff;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+.ai-response p {
+    margin: 0;
+}
+
+.ai-response .recommendation {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.priority-green {
+    background-color: #d4edda;
+    border-left: 5px solid #28a745;
+}
+
+.priority-yellow {
+    background-color: #fff3cd;
+    border-left: 5px solid #ffc107;
+}
+
+.priority-red {
+    background-color: #f8d7da;
+    border-left: 5px solid #dc3545;
+}
+
+/* Action Buttons */
+.action-buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}

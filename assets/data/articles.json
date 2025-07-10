@@ -12,7 +12,9 @@
       "World Health Organization (WHO)",
       "National Institute of Mental Health (NIMH)"
     ],
-    "relatedArticleIds": [2, 5]
+    "relatedArticleIds": [2, 5],
+    "type": "mental-health",
+    "tags": ["mental-health", "high-priority", "symptoms", "causes", "baby-blues"]
   },
   {
     "id": 2,
@@ -26,7 +28,9 @@
     "citations": [
       "Cross-Cultural Psychiatric Research Review"
     ],
-    "relatedArticleIds": [1, 3]
+    "relatedArticleIds": [1, 3],
+    "type": "cultural-practices",
+    "tags": ["cultural-practices", "mental-health", "myths", "motherhood"]
   },
   {
     "id": 3,
@@ -40,7 +44,9 @@
     "citations": [
       "Journal of Cross-Cultural Psychology"
     ],
-    "relatedArticleIds": [2, 5]
+    "relatedArticleIds": [2, 5],
+    "type": "cultural-practices",
+    "tags": ["cultural-practices", "mental-health", "sutkeri", "confinement", "family-support"]
   },
   {
     "id": 4,
@@ -52,7 +58,9 @@
     "publishDate": "2025-07-13",
     "image": "assets/images/self-care.jpeg",
     "citations": [],
-    "relatedArticleIds": [5, 6]
+    "relatedArticleIds": [5, 6],
+    "type": "mental-health",
+    "tags": ["mental-health", "low-priority", "self-care", "wellness", "routines"]
   },
   {
     "id": 5,
@@ -64,7 +72,9 @@
     "publishDate": "2025-07-14",
     "image": "assets/images/family-support.jpeg",
     "citations": [],
-    "relatedArticleIds": [1, 4, 6]
+    "relatedArticleIds": [1, 4, 6],
+    "type": "cultural-practices",
+    "tags": ["cultural-practices", "family", "support", "husband", "parents"]
   },
   {
     "id": 6,
@@ -78,6 +88,8 @@
     "citations": [
       "Nepal Medical Council"
     ],
-    "relatedArticleIds": [1, 4]
+    "relatedArticleIds": [1, 4],
+    "type": "mental-health",
+    "tags": ["mental-health", "crisis", "professional-help", "therapy", "counselors"]
   }
 ]

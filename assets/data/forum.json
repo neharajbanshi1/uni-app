@@ -14,7 +14,9 @@
         "author": "Anonymous",
         "comment": "This is so common. In our culture, there's so much pressure to be perfect, but it's okay to feel this way."
       }
-    ]
+    ],
+    "tags": ["overwhelmed", "exhausted", "guilty", "sad"],
+    "activity": "3 people active now"
   },
   {
     "id": 2,
@@ -27,7 +29,9 @@
         "author": "Anonymous",
         "comment": "I went through the same thing. I tried explaining to my family that some fresh air was important for my mental health."
       }
-    ]
+    ],
+    "tags": ["sutkeri", "family", "tradition", "isolated", "depressed"],
+    "activity": "2 people active now"
   },
   {
     "id": 3,
@@ -40,6 +44,48 @@
         "author": "Anonymous",
         "comment": "Your feelings are valid. It's hard when family doesn't understand."
       }
-    ]
+    ],
+    "tags": ["mother-in-law", "family", "dramatic", "misunderstood"],
+    "activity": "5 people active now"
+  },
+  {
+    "id": 4,
+    "author": "Anonymous",
+    "category": "Success Stories",
+    "title": "It gets better! My story of recovery.",
+    "body": "I struggled a lot in the beginning, but with support from my husband and a good doctor, I'm feeling so much better. There is hope!",
+    "thread": [],
+    "tags": ["success-story", "recovery", "hope"],
+    "activity": "1 person active now"
+  },
+  {
+    "id": 5,
+    "author": "Anonymous",
+    "category": "Breastfeeding Support",
+    "title": "Is it normal for breastfeeding to be this hard?",
+    "body": "I'm having so much trouble with breastfeeding. It's painful and I'm worried my baby isn't getting enough milk. Any advice?",
+    "thread": [],
+    "tags": ["breastfeeding", "pain", "nursing", "milk"],
+    "activity": "8 people active now"
+  },
+  {
+    "id": 6,
+    "author": "Anonymous",
+    "category": "Expert Advice",
+    "title": "Looking for a good psychiatrist in Kathmandu",
+    "body": "Can anyone recommend a good psychiatrist who specializes in postpartum issues? I think I need to talk to someone.",
+    "thread": [],
+    "tags": ["expert-advice", "psychiatrist", "kathmandu"],
+    "activity": "4 people active now"
+  },
+  {
+    "id": 7,
+    "author": "Anonymous",
+    "category": "Anonymous Concerns",
+    "title": "Is it just the baby blues?",
+    "body": "I've been feeling a bit down and weepy since my baby was born. My family says it's just the 'baby blues' and it will pass. How do I know if it's something more serious?",
+    "thread": [],
+    "tags": ["baby-blues", "sad", "weepy", "normal"],
+    "activity": "6 people active now"
   }
 ]

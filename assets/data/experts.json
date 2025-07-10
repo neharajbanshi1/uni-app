@@ -10,7 +10,10 @@
     "fees": "NPR 1500 per session",
     "location": "Kathmandu",
     "contact": "sunita.sharma@hospital.com",
-    "bio": "Dr. Sharma is a leading psychiatrist specializing in supporting mothers through their postpartum journey. With over a decade of experience, she offers compassionate, evidence-based care to help women navigate the challenges of motherhood."
+    "bio": "Dr. Sharma is a leading psychiatrist specializing in supporting mothers through their postpartum journey. With over a decade of experience, she offers compassionate, evidence-based care to help women navigate the challenges of motherhood.",
+    "availability": "Available today",
+    "rating": 4.9,
+    "tags": ["psychiatrist", "postpartum-depression", "mental-health"]
   },
   {
     "id": 2,
@@ -23,7 +26,10 @@
     "fees": "NPR 1200 per session",
     "location": "Patan",
     "contact": "rajesh.thapa@clinic.com",
-    "bio": "Rajesh Thapa helps families navigate the challenges of postpartum mental health with compassion and evidence-based therapies. He is skilled in creating a safe and supportive environment for new mothers and their partners."
+    "bio": "Rajesh Thapa helps families navigate the challenges of postpartum mental health with compassion and evidence-based therapies. He is skilled in creating a safe and supportive environment for new mothers and their partners.",
+    "availability": "Available now",
+    "rating": 4.7,
+    "tags": ["psychologist", "cbt", "family-counseling"]
   },
   {
     "id": 3,
@@ -36,7 +42,10 @@
     "fees": "NPR 1600 per session",
     "location": "Kathmandu",
     "contact": "anjali.gurung@hospital.com",
-    "bio": "Dr. Gurung has extensive experience in treating a wide range of mental health issues affecting new mothers, with a special focus on anxiety and mood disorders during the perinatal period."
+    "bio": "Dr. Gurung has extensive experience in treating a wide range of mental health issues affecting new mothers, with a special focus on anxiety and mood disorders during the perinatal period.",
+    "availability": "Book appointment",
+    "rating": 4.8,
+    "tags": ["psychiatrist", "anxiety", "mental-health"]
   },
   {
     "id": 4,
@@ -49,7 +58,10 @@
     "fees": "NPR 800 per session",
     "location": "Bhaktapur",
     "contact": "bikash.shrestha@communityhealth.org",
-    "bio": "Bikash Shrestha is a dedicated counselor working in community health. He is known for his culturally sensitive approach, helping mothers and families understand and address mental health in a way that respects tradition."
+    "bio": "Bikash Shrestha is a dedicated counselor working in community health. He is known for his culturally sensitive approach, helping mothers and families understand and address mental health in a way that respects tradition.",
+    "availability": "Available today",
+    "rating": 4.5,
+    "tags": ["counselor", "community-support", "cultural-sensitivity"]
   },
   {
     "id": 5,
@@ -62,7 +74,10 @@
     "fees": "NPR 1400 per session",
     "location": "Patan",
     "contact": "gita.rai@hospital.com",
-    "bio": "Dr. Rai is a gynecologist with a special interest in postpartum care, helping mothers recover both physically and emotionally after childbirth."
+    "bio": "Dr. Rai is a gynecologist with a special interest in postpartum care, helping mothers recover both physically and emotionally after childbirth.",
+    "availability": "Book appointment",
+    "rating": 4.6,
+    "tags": ["gynecologist", "postpartum-care", "womens-health"]
   },
   {
     "id": 6,
@@ -75,6 +90,73 @@
     "fees": "NPR 1100 per session",
     "location": "Kathmandu",
     "contact": "sanjay.lama@clinic.com",
-    "bio": "Sanjay Lama focuses on child development and parenting support, offering guidance to new parents on creating a nurturing environment for their children."
+    "bio": "Sanjay Lama focuses on child development and parenting support, offering guidance to new parents on creating a nurturing environment for their children.",
+    "availability": "Available now",
+    "rating": 4.4,
+    "tags": ["psychologist", "child-development", "parenting"]
+  },
+  {
+    "id": 7,
+    "name": "Dr. Priya Sharma",
+    "credentials": "Psychiatrist",
+    "photo": "assets/images/Dr. Sunita Sharma.jpeg",
+    "specialties": ["Mental Health Specialist"],
+    "experience": 10,
+    "languages": ["Nepali", "English"],
+    "fees": "NPR 1500 per session",
+    "location": "Kathmandu",
+    "contact": "priya.sharma@hospital.com",
+    "bio": "Dr. Priya Sharma is a dedicated psychiatrist with a focus on mental health in the postpartum period.",
+    "availability": "Available now",
+    "rating": 4.9,
+    "tags": ["psychiatrist", "mental-health"]
+  },
+  {
+    "id": 8,
+    "name": "Dr. Raj Patel",
+    "credentials": "Counselor",
+    "photo": "assets/images/Rajesh Thapa.jpeg",
+    "specialties": ["Postpartum Support"],
+    "experience": 8,
+    "languages": ["Nepali", "English"],
+    "fees": "NPR 1200 per session",
+    "location": "Patan",
+    "contact": "raj.patel@clinic.com",
+    "bio": "Dr. Raj Patel provides counseling and support for new mothers facing postpartum challenges.",
+    "availability": "Available today",
+    "rating": 4.8,
+    "tags": ["counselor", "postpartum-support"]
+  },
+  {
+    "id": 9,
+    "name": "Nurse Maya KC",
+    "credentials": "Lactation Consultant",
+    "photo": "assets/images/Bikash Shrestha.jpeg",
+    "specialties": ["Breastfeeding Support"],
+    "experience": 6,
+    "languages": ["Nepali", "English"],
+    "fees": "NPR 1000 per session",
+    "location": "Bhaktapur",
+    "contact": "maya.kc@clinic.com",
+    "bio": "Nurse Maya KC is a certified lactation consultant who helps mothers with breastfeeding challenges.",
+    "availability": "Book appointment",
+    "rating": 4.7,
+    "tags": ["lactation-consultant", "breastfeeding"]
+  },
+  {
+    "id": 10,
+    "name": "Anita Gurung",
+    "credentials": "MA, Counselor",
+    "photo": "assets/images/Dr. Anjali Gurung.jpeg",
+    "specialties": ["Postpartum Support", "Baby Blues"],
+    "experience": 5,
+    "languages": ["Nepali", "English"],
+    "fees": "NPR 900 per session",
+    "location": "Kathmandu",
+    "contact": "anita.gurung@clinic.com",
+    "bio": "Anita Gurung is a counselor specializing in supporting new mothers through the emotional adjustments of the postpartum period, including the baby blues.",
+    "availability": "Available now",
+    "rating": 4.8,
+    "tags": ["counselor", "postpartum-support", "baby-blues"]
   }
 ]
