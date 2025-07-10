@@ -53,11 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="booking-section">
                     <h3>Book an Appointment</h3>
                     <div class="form-group">
-                        <label for="appointment-date">Select a Date:</label>
                         <input type="date" id="appointment-date" class="form-control">
                     </div>
                     <p><strong>Availability:</strong> <span id="availability-status" class="availability-status"></span></p>
-                    <button id="book-appointment-btn" class="btn-primary" disabled>Book Appointment</button>
+                    <button id="book-appointment-btn" class="btn btn-primary" disabled>Book Appointment</button>
                     <p id="booking-confirmation" class="booking-confirmation" style="display:none;">Your appointment has been successfully booked!</p>
                 </div>
             </div>
@@ -66,6 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const datePicker = document.getElementById('appointment-date');
         const availabilityStatus = document.getElementById('availability-status');
         const bookBtn = document.getElementById('book-appointment-btn');
+
+        availabilityStatus.textContent = 'Select a date to check';
 
         datePicker.addEventListener('change', () => {
             const selectedDate = new Date(datePicker.value);
@@ -78,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             availabilityStatus.textContent = status;
-            availabilityStatus.className = `availability-status ${status.toLowerCase().replace(/\s/g, '-')}`;
+            availabilityStatus.className = `availability-status ${status === 'Available' ? 'available' : 'not-available'}`;
             bookBtn.disabled = status !== 'Available';
         });
 

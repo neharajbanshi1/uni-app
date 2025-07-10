@@ -93,6 +93,20 @@ nav ul li a {
 #google_translate_element {
     min-width: 110px; /* Prevent layout shift */
 }
+#text-to-speech-btn {
+    background-color: var(--color-muted-lilac);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#text-to-speech-btn:hover {
+    background-color: var(--color-warm-rose);
+}
 
 main {
     padding: 1rem;
@@ -874,24 +888,59 @@ footer {
 
 .availability-status {
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 8px 12px;
     border-radius: 5px;
-    color: var(--text-color);
-}
-
-.availability-status.available-now {
-    background-color: #28a745;
     color: #fff;
+    background-color: #6c757d; /* Default */
+    display: inline-block;
+    min-width: 120px;
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
-.availability-status.available-today {
-    background-color: #ffc107;
-    color: #333;
+.availability-status.available {
+    background-color: #28a745; /* Available */
 }
 
-.availability-status.book-appointment {
-    background-color: #17a2b8;
-    color: #fff;
+.availability-status.not-available {
+    background-color: #dc3545; /* Not Available */
+}
+
+
+#book-appointment-btn, #appointment-date {
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+#book-appointment-btn {
+    background-color: var(--color-muted-lilac);
+    color: white;
+}
+
+#book-appointment-btn:hover:not(:disabled) {
+    background-color: var(--color-warm-rose);
+}
+
+#appointment-date {
+    background-color: var(--color-blush-pink);
+    color: var(--color-charcoal-gray);
+    border: 2px solid var(--color-secondary-accent);
+}
+
+#book-appointment-btn:disabled {
+    background-color: var(--color-blush-pink);
+    color: var(--color-warm-rose);
+    cursor: not-allowed;
+}
+
+#book-appointment-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .booking-confirmation {

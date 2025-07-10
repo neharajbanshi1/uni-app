@@ -43,6 +43,9 @@ document.addEventListener("DOMContentLoaded", function() {
             // Load the Google Translate script with the callback
             return loadScript('//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit');
         })
+        .then(() => {
+            return loadScript('src/js/text-to-speech.js');
+        })
         .catch(error => {
             console.error('Failed to load header or scripts:', error);
         });
